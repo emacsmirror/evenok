@@ -1,4 +1,4 @@
-;;; base16-evenok-dark-theme.el --- A dark-theme with perceptively evenly distributed colors maximizing chroma  -*- lexical-binding: t; -*-
+;;; base16-evenok-dark-theme.el --- A dark-theme with perceptively evenly distributed colors maximizing chroma -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2023 Mekeor Melire <mekeor@posteo.de>
 
