@@ -1757,6 +1757,14 @@
   (apply #'custom-theme-set-variables 'evenok
     `(ansi-color-faces-vector [default bold shadow italic underline success warning error])
     `(ansi-color-names-vector [,grey ,bright-red ,bright-green ,bright-yellow ,bright-blue ,bright-magenta ,bright-cyan ,bright])
+    `(erc-log-match-format
+       (concat
+         (propertize "%t" 'face (list :foreground ,bright-green)) " "
+         (propertize "%c" 'face (list :foreground ,bright-blue)) " "
+         (propertize "%n" 'face (list :foreground ,bright-yellow)) ": "
+         (propertize "%m"
+           'wrap-prefix (list 'space :width 4)
+           'line-prefix (list 'space :width 4))))
     (seq-map
       (pcase-lambda (`(,sy _))
         (list sy (list 'quote (intern (concat "evenok-" (symbol-name sy)))) t))
