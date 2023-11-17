@@ -25,6 +25,11 @@
 ;; evenly distribute its colors while primarily maximizing their
 ;; chroma (colorfulness) and secondly their lightness.
 
+;; Screenshots are available at:
+;; <https://envs.sh/s/y5ZxJGYr_H_zPXCKqEljAQ/hJ_.png>
+;; <https://envs.sh/hJj.png>
+;; <https://envs.sh/hJc.png>
+
 ;; evenok-theme is built with base16. Thus, it only uses 16 colors; 8
 ;; greyscale and 8 actual colors.
 
