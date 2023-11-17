@@ -26,9 +26,8 @@
 ;;; Commentary:
 
 ;; base16-evenok-light-theme is a color theme for Emacs that aims to
-;; perceptively evenly distribute its colors while primarily
-;; maximizing their chroma (colorfulness) and secondly their
-;; lightness.
+;; perceptively evenly distribute its colors while maximizing their
+;; chroma (colorfulness).
 
 ;; base16-evenok-light-theme is built with base16. Thus, it only uses
 ;; 16 colors; 8 greyscale and 8 actual colors.

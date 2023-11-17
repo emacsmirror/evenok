@@ -26,9 +26,8 @@
 ;;; Commentary:
 
 ;; base16-evenok-dark-theme is a color theme for Emacs that aims to
-;; perceptively evenly distribute its colors while primarily
-;; maximizing their chroma (colorfulness) and secondly their
-;; lightness.
+;; perceptively evenly distribute its colors while maximizing their
+;; chroma (colorfulness).
 
 ;; Screenshots are available at:
 ;; - Emacs Lisp: <https://envs.sh/hJc.png>
@@ -36,9 +35,6 @@
 
 ;; base16-evenok-dark-theme is built with base16. Thus, it only uses
 ;; 16 colors; 8 greyscale and 8 actual colors.
-
-;; The greyscale is currently simply copied from base16-pop-theme. It
-;; may be subject of changes.
 
 ;; The 8 colors have been picked using the OKLCH color space (using
 ;; the color picker website <https://oklch.com>), which makes sure
@@ -57,7 +53,7 @@
 (defvar base16-evenok-dark-theme-colors
   (list
 
-    ;; greyscale. copied from base16-pop-theme-colors.
+    ;; greyscale.
     :base00 "#000000"
     :base01 "#333333"
     :base02 "#444444"
