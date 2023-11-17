@@ -1740,13 +1740,20 @@
 
   ;;;; set faces and variables of custom theme
 
+  ;; set faces-as-faces as faces of theme
   (apply #'custom-theme-set-faces 'evenok faces-as-faces)
 
+  ;; now for faces-as-variables:
+
+  ;; for each face-as-variable, declare a face. to do that, prefix the
+  ;; symbol with evenok-.
   (seq-do
     (pcase-lambda (`(,sy _))
       (eval (list 'defface (intern (concat "evenok-" (symbol-name sy))) nil nil)))
     faces-as-variables)
 
+  ;; for each face-as-variable, set it to the previously declared
+  ;; face.
   (apply #'custom-theme-set-variables 'evenok
     `(ansi-color-faces-vector [default bold shadow italic underline success warning error])
     `(ansi-color-names-vector [,grey ,bright-red ,bright-green ,bright-yellow ,bright-blue ,bright-magenta ,bright-cyan ,bright])
@@ -1755,6 +1762,8 @@
         (list sy (list 'quote (intern (concat "evenok-" (symbol-name sy)))) t))
       faces-as-variables))
 
+  ;; for each face-as-variable, initialize the previously declared
+  ;; face.
   (apply #'custom-theme-set-faces 'evenok
     (seq-map
       (pcase-lambda (`(,sy ,sp))
