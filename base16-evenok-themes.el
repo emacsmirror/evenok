@@ -5,7 +5,7 @@
 ;; Author: Mekeor Melire <mekeor@posteo.de>
 ;; Maintainer: Mekeor Melire <mekeor@posteo.de>
 ;; Created: 2023
-;; Version: 0.2
+;; Version: 0.3
 ;; Package-Requires: ((base16-theme "20230502.2156"))
 ;; Homepage: https://codeberg.org/mekeor/emacs-base16-evenok-themes
 
