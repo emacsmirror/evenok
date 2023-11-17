@@ -1,5 +1,70 @@
 ;; -*- lexical-binding: t; -*-
 
+;;;; roadmap
+
+;; ibuffer-fontification-alist: get rid of font-lock-* faces
+
+;; consider these variables, taken from modus-themes-custom-variables:
+;; `(chart-face-color-list
+;;   '( ,bg-graph-red-0 ,bg-graph-green-0 ,bg-graph-yellow-0 ,bg-graph-blue-0 ,bg-graph-magenta-0 ,bg-graph-cyan-0
+;;      ,bg-graph-red-1 ,bg-graph-green-1 ,bg-graph-yellow-1 ,bg-graph-blue-1 ,bg-graph-magenta-1 ,bg-graph-cyan-1))
+;; `(flymake-error-bitmap '(flymake-double-exclamation-mark modus-themes-prominent-error))
+;; `(flymake-warning-bitmap '(exclamation-mark modus-themes-prominent-warning))
+;; `(flymake-note-bitmap '(exclamation-mark modus-themes-prominent-note))
+;; `(highlight-changes-colors nil)
+;; `(highlight-changes-face-list '(success warning error bold bold-italic))
+;; `(rcirc-colors
+;;   '(modus-themes-fg-red
+;;     modus-themes-fg-green
+;;     modus-themes-fg-blue
+;;     modus-themes-fg-yellow
+;;     modus-themes-fg-magenta
+;;     modus-themes-fg-cyan
+;;     modus-themes-fg-red-warmer
+;;     modus-themes-fg-green-warmer
+;;     modus-themes-fg-blue-warmer
+;;     modus-themes-fg-yellow-warmer
+;;     modus-themes-fg-magenta-warmer
+;;     modus-themes-fg-cyan-warmer
+;;     modus-themes-fg-red-cooler
+;;     modus-themes-fg-green-cooler
+;;     modus-themes-fg-blue-cooler
+;;     modus-themes-fg-yellow-cooler
+;;     modus-themes-fg-magenta-cooler
+;;     modus-themes-fg-cyan-cooler
+;;     modus-themes-fg-red-faint
+;;     modus-themes-fg-green-faint
+;;     modus-themes-fg-blue-faint
+;;     modus-themes-fg-yellow-faint
+;;     modus-themes-fg-magenta-faint
+;;     modus-themes-fg-cyan-faint
+;;     modus-themes-fg-red-intense
+;;     modus-themes-fg-green-intense
+;;     modus-themes-fg-blue-intense
+;;     modus-themes-fg-yellow-intense
+;;     modus-themes-fg-magenta-intense
+;;     modus-themes-fg-cyan-intense))
+;;   `(org-src-block-faces
+;;     `(("emacs-lisp" modus-themes-nuanced-magenta)
+;;       ("elisp" modus-themes-nuanced-magenta)
+;;       ("clojure" modus-themes-nuanced-magenta)
+;;       ("clojurescript" modus-themes-nuanced-magenta)
+;;       ("c" modus-themes-nuanced-blue)
+;;       ("c++" modus-themes-nuanced-blue)
+;;       ("sh" modus-themes-nuanced-green)
+;;       ("shell" modus-themes-nuanced-green)
+;;       ("html" modus-themes-nuanced-yellow)
+;;       ("xml" modus-themes-nuanced-yellow)
+;;       ("css" modus-themes-nuanced-red)
+;;       ("scss" modus-themes-nuanced-red)
+;;       ("python" modus-themes-nuanced-green)
+;;       ("ipython" modus-themes-nuanced-magenta)
+;;       ("r" modus-themes-nuanced-cyan)
+;;       ("yaml" modus-themes-nuanced-cyan)
+;;       ("conf" modus-themes-nuanced-cyan)
+;;       ("docker" modus-themes-nuanced-cyan)))
+
+
 ;;;; conventions
 
 ;; links, buttons
@@ -1740,7 +1805,11 @@
       `(grep-context-face ((t :background ,dark :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
       `(grep-error-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-red :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
       `(grep-hit-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-yellow :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
-      `(grep-match-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video t :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight bold :width unspecified)) t))))
+      `(grep-match-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video t :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight bold :width unspecified)) t)
+      `(ibuffer-deletion-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-red :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
+      `(ibuffer-filter-group-name-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,white :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight bold :width unspecified)) t)
+      `(ibuffer-marked-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-orange :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant italic :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
+      `(ibuffer-title-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,faded :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t))))
 
   ;;;; set faces and variables of custom theme
 
@@ -1769,6 +1838,8 @@
          (propertize "%m"
            'wrap-prefix (list 'space :width 4)
            'line-prefix (list 'space :width 4))))
+    `(frame-background-mode 'dark)
+    `(pdf-view-midnight-colors (cons ,bright ,black))
     (seq-map
       (pcase-lambda (`(,sy _))
         (list sy (list 'quote (intern (concat "evenok-" (symbol-name sy)))) t))
