@@ -21,13 +21,12 @@
 
 ;;; Commentary:
 
-;; evenok-theme is a color theme for Emacs that aims to
-;; perceptively evenly distribute its colors while primarily
-;; maximizing their chroma (colorfulness) and secondly their
-;; lightness.
+;; evenok-theme is a color theme for Emacs that aims to perceptively
+;; evenly distribute its colors while primarily maximizing their
+;; chroma (colorfulness) and secondly their lightness.
 
-;; evenok-theme is built with base16. Thus, it only uses 16
-;; colors; 8 greyscale and 8 actual colors.
+;; evenok-theme is built with base16. Thus, it only uses 16 colors; 8
+;; greyscale and 8 actual colors.
 
 ;; The greyscale is currently simply copied from base16-pop-theme. It
 ;; may be subject of changes.
