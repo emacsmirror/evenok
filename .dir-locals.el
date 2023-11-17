@@ -1,0 +1,1 @@
+/home/user/store/host/permanent/git/own/configuration/.dir-locals.el
