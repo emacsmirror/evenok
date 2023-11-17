@@ -36,6 +36,9 @@
 ;; base16-evenok-dark-theme is built with base16. Thus, it only uses
 ;; 16 colors; 8 greyscale and 8 actual colors.
 
+;; TODO: fix colors restricting to rgb. currently experimenting with:
+;; oklch(72% 0.13 175)
+
 ;; The 8 colors have been picked using the OKLCH color space (using
 ;; the color picker website <https://oklch.com>), which makes sure
 ;; that they are perceived with equal lightness and that they are
@@ -63,16 +66,19 @@
     :base06 "#ffffff"
     :base07 "#ffffff"
 
-    ;; colors. based on oklch with l=71.1% and c=0.165. gap at blue
-    ;; and cyan hues. offset 10° for red and 190° for cyan.
-    :base08 "#f5708a"
-    :base09 "#ee8122"
-    :base0A "#b8a300"
-    :base0B "#54bc5c"
-    :base0C "#00bab3"
-    :base0D "#00aff2"
-    :base0E "#9095ff"
-    :base0F "#d47ada"))
+    ;; colors. based on oklch(73.6% 0.135 358+n*45°), i.e.
+    ;; lightness  L=73.6%
+    ;; chroma     C=0.135
+    ;; hue offset H=358°
+    ;; https://oklch.com/#73.6,0.135,358,100
+    :base08 "#ed83a9"
+    :base09 "#f08b61"
+    :base0A "#cda430"
+    :base0B "#87bc5f"
+    :base0C "#04c5aa"
+    :base0D "#11bbe7"
+    :base0E "#85a5ff"
+    :base0F "#c78fe6"))
 
 (deftheme base16-evenok-dark)
 
