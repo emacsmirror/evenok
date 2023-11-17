@@ -1,4 +1,4 @@
-;;; base16-evenok-dark-theme.el --- A dark-theme with perceptively evenly distributed colors maximizing chroma  -*- lexical-binding: t; -*-
+;;; base16-evenok-light-theme.el --- A light-theme with perceptively evenly distributed colors maximizing chroma  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2023 Mekeor Melire <mekeor@posteo.de>
 
@@ -25,20 +25,13 @@
 
 ;;; Commentary:
 
-;; base16-evenok-dark-theme is a color theme for Emacs that aims to
+;; base16-evenok-light-theme is a color theme for Emacs that aims to
 ;; perceptively evenly distribute its colors while primarily
 ;; maximizing their chroma (colorfulness) and secondly their
 ;; lightness.
 
-;; Screenshots are available at:
-;; - Emacs Lisp: <https://envs.sh/hJc.png>
-;; - TypeScript: <https://envs.sh/hJj.png>
-
-;; base16-evenok-dark-theme is built with base16. Thus, it only uses
+;; base16-evenok-light-theme is built with base16. Thus, it only uses
 ;; 16 colors; 8 greyscale and 8 actual colors.
-
-;; The greyscale is currently simply copied from base16-pop-theme. It
-;; may be subject of changes.
 
 ;; The 8 colors have been picked using the OKLCH color space (using
 ;; the color picker website <https://oklch.com>), which makes sure
@@ -54,18 +47,18 @@
 
 (require 'base16-theme)
 
-(defvar base16-evenok-dark-theme-colors
+(defvar base16-evenok-light-theme-colors
   (list
 
-    ;; greyscale. copied from base16-pop-theme-colors.
-    :base00 "#000000"
-    :base01 "#333333"
-    :base02 "#444444"
-    :base03 "#888888"
-    :base04 "#bbbbbb"
-    :base05 "#dddddd"
-    :base06 "#ffffff"
-    :base07 "#ffffff"
+    ;; greyscale.
+    :base00 "#ffffff"
+    :base01 "#eeeeee"
+    :base02 "#dddddd"
+    :base03 "#bbbbbb"
+    :base04 "#888888"
+    :base05 "#444444"
+    :base06 "#000000"
+    :base07 "#000000"
 
     ;; colors. based on oklch with l=71.1% and c=0.165. gap at blue
     ;; and cyan hues. offset 10° for red and 190° for cyan.
@@ -78,13 +71,13 @@
     :base0E "#9095ff"
     :base0F "#d47ada"))
 
-(deftheme base16-evenok-dark)
+(deftheme base16-evenok-light)
 
-(base16-theme-define 'base16-evenok-dark
-  base16-evenok-dark-theme-colors)
+(base16-theme-define 'base16-evenok-light
+  base16-evenok-light-theme-colors)
 
-(provide-theme 'base16-evenok-dark)
+(provide-theme 'base16-evenok-light)
 
-(provide 'base16-evenok-dark-theme)
+(provide 'base16-evenok-light-theme)
 
-;;; base16-evenok-dark-theme.el ends here
+;;; base16-evenok-light-theme.el ends here
