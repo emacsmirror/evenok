@@ -1759,7 +1759,7 @@
     `(ansi-color-names-vector [,grey ,bright-red ,bright-green ,bright-yellow ,bright-blue ,bright-magenta ,bright-cyan ,bright])
     `(erc-log-match-format
        (concat
-         (propertize "%t" 'face (list :foreground ,bright-green)) " "
+         (propertize "%t" 'face (list :foreground ,faded)) " "
          (propertize "%c" 'face (list :foreground ,bright-blue)) " "
          (propertize "%n" 'face (list :foreground ,bright-yellow)) ": "
          (propertize "%m"
