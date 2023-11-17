@@ -45,9 +45,6 @@
 ;; mentioned chroma and lightness values, have been avoided with an
 ;; appropriate offset, namely 10°.
 
-;; In addition to the colors provided by base16, this theme also
-;; provides some basic face attributes for font-lock.
-
 ;;; Code:
 
 (require 'base16-theme)
@@ -79,12 +76,6 @@
 (deftheme evenok)
 
 (base16-theme-define 'evenok evenok-theme-colors)
-
-(custom-theme-set-faces 'evenok
-  '(font-lock-comment-face ((t (:slant  italic))))
-  '(font-lock-doc-face     ((t (:slant  italic))))
-  '(font-lock-keyword-face ((t (:weight bold))))
-  '(font-lock-string-face  ((t (:slant  italic)))))
 
 (provide-theme 'evenok)
 
