@@ -1,4 +1,4 @@
-;;; evenok-theme.el --- A dark-theme with perceptively evenly distributed colors maximizing chroma -*- lexical-binding: t; -*-
+;;; evenok-dark-theme.el --- A dark-theme with perceptively evenly distributed colors maximizing chroma -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2023 Mekeor Melire <mekeor@posteo.de>
 
@@ -25,11 +25,11 @@
 
 ;;; Commentary:
 
-;; evenok-theme is a color theme for Emacs that aims to
+;; evenok-dark-theme is a color theme for Emacs that aims to
 ;; perceptively evenly distribute its colors while maximizing their
 ;; chroma (colorfulness).
 
-;; evenok-theme is built with base16. Thus, it only uses
+;; evenok-dark-theme is built with base16. Thus, it only uses
 ;; 16 colors; 8 greyscale and 8 actual colors.
 
 ;; The 8 colors have been picked using the OKLCH color space (using
@@ -46,7 +46,7 @@
 
 (require 'base16-theme)
 
-(defvar evenok-theme-colors
+(defvar evenok-dark-theme-colors
   (list
 
     ;; greyscale.
@@ -71,13 +71,13 @@
     :base0E "#85a5ff"
     :base0F "#c78fe6"))
 
-(deftheme evenok)
+(deftheme evenok-dark)
 
-(base16-theme-define 'evenok
-  evenok-theme-colors)
+(base16-theme-define 'evenok-dark
+  evenok-dark-theme-colors)
 
-(provide-theme 'evenok)
+(provide-theme 'evenok-dark)
 
-(provide 'evenok-theme)
+(provide 'evenok-dark-theme)
 
-;;; evenok-theme.el ends here
+;;; evenok-dark-theme.el ends here
