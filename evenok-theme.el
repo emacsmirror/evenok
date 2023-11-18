@@ -2,8 +2,6 @@
 
 ;;;; roadmap
 
-;; ibuffer-fontification-alist: get rid of font-lock-* faces
-
 ;; consider these variables, taken from modus-themes-custom-variables:
 ;; `(chart-face-color-list
 ;;   '( ,bg-graph-red-0 ,bg-graph-green-0 ,bg-graph-yellow-0 ,bg-graph-blue-0 ,bg-graph-magenta-0 ,bg-graph-cyan-0
@@ -1839,6 +1837,7 @@
            'wrap-prefix (list 'space :width 4)
            'line-prefix (list 'space :width 4))))
     `(frame-background-mode 'dark)
+    `(ibuffer-fontification-alist nil)
     `(pdf-view-midnight-colors (cons ,bright ,black))
     (seq-map
       (pcase-lambda (`(,sy _))
