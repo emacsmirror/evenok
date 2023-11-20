@@ -1,65 +1,5 @@
 ;; -*- lexical-binding: t; -*-
 
-;;;; roadmap
-
-;; consider these variables, taken from modus-themes-custom-variables:
-;; `(flymake-error-bitmap '(flymake-double-exclamation-mark modus-themes-prominent-error))
-;; `(flymake-warning-bitmap '(exclamation-mark modus-themes-prominent-warning))
-;; `(flymake-note-bitmap '(exclamation-mark modus-themes-prominent-note))
-;; `(highlight-changes-colors nil)
-;; `(highlight-changes-face-list '(success warning error bold bold-italic))
-;; `(rcirc-colors
-;;   '(modus-themes-fg-red
-;;     modus-themes-fg-green
-;;     modus-themes-fg-blue
-;;     modus-themes-fg-yellow
-;;     modus-themes-fg-magenta
-;;     modus-themes-fg-cyan
-;;     modus-themes-fg-red-warmer
-;;     modus-themes-fg-green-warmer
-;;     modus-themes-fg-blue-warmer
-;;     modus-themes-fg-yellow-warmer
-;;     modus-themes-fg-magenta-warmer
-;;     modus-themes-fg-cyan-warmer
-;;     modus-themes-fg-red-cooler
-;;     modus-themes-fg-green-cooler
-;;     modus-themes-fg-blue-cooler
-;;     modus-themes-fg-yellow-cooler
-;;     modus-themes-fg-magenta-cooler
-;;     modus-themes-fg-cyan-cooler
-;;     modus-themes-fg-red-faint
-;;     modus-themes-fg-green-faint
-;;     modus-themes-fg-blue-faint
-;;     modus-themes-fg-yellow-faint
-;;     modus-themes-fg-magenta-faint
-;;     modus-themes-fg-cyan-faint
-;;     modus-themes-fg-red-intense
-;;     modus-themes-fg-green-intense
-;;     modus-themes-fg-blue-intense
-;;     modus-themes-fg-yellow-intense
-;;     modus-themes-fg-magenta-intense
-;;     modus-themes-fg-cyan-intense))
-;;   `(org-src-block-faces
-;;     `(("emacs-lisp" modus-themes-nuanced-magenta)
-;;       ("elisp" modus-themes-nuanced-magenta)
-;;       ("clojure" modus-themes-nuanced-magenta)
-;;       ("clojurescript" modus-themes-nuanced-magenta)
-;;       ("c" modus-themes-nuanced-blue)
-;;       ("c++" modus-themes-nuanced-blue)
-;;       ("sh" modus-themes-nuanced-green)
-;;       ("shell" modus-themes-nuanced-green)
-;;       ("html" modus-themes-nuanced-yellow)
-;;       ("xml" modus-themes-nuanced-yellow)
-;;       ("css" modus-themes-nuanced-red)
-;;       ("scss" modus-themes-nuanced-red)
-;;       ("python" modus-themes-nuanced-green)
-;;       ("ipython" modus-themes-nuanced-magenta)
-;;       ("r" modus-themes-nuanced-cyan)
-;;       ("yaml" modus-themes-nuanced-cyan)
-;;       ("conf" modus-themes-nuanced-cyan)
-;;       ("docker" modus-themes-nuanced-cyan)))
-
-
 ;;;; conventions
 
 ;; links, buttons
@@ -1810,10 +1750,12 @@
 
   ;;;; set faces and variables of custom theme
 
+  ;;;;;; faces-as-faces
+
   ;; set faces-as-faces as faces of theme
   (apply #'custom-theme-set-faces 'evenok faces-as-faces)
 
-  ;; now for faces-as-variables:
+  ;;;;;; faces-as-variables
 
   ;; for each face-as-variable, declare a face. to do that, prefix the
   ;; symbol with evenok-.
@@ -1849,7 +1791,27 @@
     (seq-map
       (pcase-lambda (`(,sy ,sp))
         (list (intern (concat "evenok-" (symbol-name sy))) sp t))
-      faces-as-variables)))
+      faces-as-variables))
+
+  ;;;;;; manual faces-as-variables
+
+  (defface evenok-flymake-error-bitmap nil nil)
+  (custom-theme-set-variables 'evenok
+    '(flymake-error-bitmap (list 'exclamation-mark 'evenok-flymake-error-bitmap)))
+  (custom-theme-set-faces 'evenok
+    `(evenok-flymake-error-bitmap ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-red :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t))
+
+  (defface evenok-flymake-warning-bitmap nil nil)
+  (custom-theme-set-variables 'evenok
+    '(flymake-warning-bitmap (list 'question-mark 'evenok-flymake-warning-bitmap)))
+  (custom-theme-set-faces 'evenok
+    `(evenok-flymake-warning-bitmap ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-orange :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t))
+
+  (defface evenok-flymake-note-bitmap nil nil)
+  (custom-theme-set-variables 'evenok
+    '(flymake-note-bitmap (list 'question-mark 'evenok-flymake-note-bitmap)))
+  (custom-theme-set-faces 'evenok
+    `(evenok-flymake-note-bitmap ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-blue :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)))
 
 ;;;; provide theme
 
