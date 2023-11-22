@@ -851,6 +851,7 @@
       `(highlight ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
       `(highlight-changes ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
       `(highlight-changes-delete ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
+      `(highlight-parentheses-highlight ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,white :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight bold :width unspecified)) t)
       `(hl-line ((t :background ,dark :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
       `(hl-todo ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-red :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
       `(holiday ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
@@ -1778,6 +1779,7 @@
            'wrap-prefix (list 'space :width 4)
            'line-prefix (list 'space :width 4))))
     `(frame-background-mode 'dark)
+    `(highlight-parentheses-colors nil)
     `(ibuffer-fontification-alist nil)
     `(pdf-view-midnight-colors (cons ,bright ,black))
     (seq-map
