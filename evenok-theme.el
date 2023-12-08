@@ -1133,7 +1133,7 @@
       `(highlight-changes-delete ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
       `(highlight-parentheses-highlight ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,white :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight bold :width unspecified)) t)
       `(hl-line ((t :background ,dark :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
-      `(hl-todo ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-red :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
+      `(hl-todo ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
       `(holiday ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
       `(homoglyph ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
       `(hydra-face-amaranth ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-magenta :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
@@ -2038,6 +2038,8 @@
 
   ;;;;;; faces-as-variables
 
+  ;;;;;;;; automatic
+
   ;; for each face-as-variable, declare a face. to do that, prefix the
   ;; symbol with evenok-.
   (seq-do
@@ -2075,7 +2077,7 @@
         (list (intern (concat "evenok-" (symbol-name sy))) sp t))
       faces-as-variables))
 
-  ;;;;;; manual faces-as-variables
+  ;;;;;;;; manual
 
   (defface evenok-flymake-error-bitmap nil nil)
   (custom-theme-set-variables 'evenok
@@ -2093,7 +2095,51 @@
   (custom-theme-set-variables 'evenok
     '(flymake-note-bitmap (list 'question-mark 'evenok-flymake-note-bitmap)))
   (custom-theme-set-faces 'evenok
-    `(evenok-flymake-note-bitmap ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-blue :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)))
+    `(evenok-flymake-note-bitmap ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-blue :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t))
+
+  (defface evenok-hl-todo-fixme nil nil)
+  (defface evenok-hl-todo-info  nil nil)
+  (defface evenok-hl-todo-pndg  nil nil)
+  (defface evenok-hl-todo-prgs  nil nil)
+  (defface evenok-hl-todo-todo  nil nil)
+  (defface evenok-hl-todo-xxx   nil nil)
+  (custom-theme-set-variables 'evenok
+    '(hl-todo-keyword-faces
+       (list
+         ;; apply `upcase' on lower-cased strings to avoid
+         ;; highlighting by `hl-todo-mode'.
+         (cons (upcase "fixme") 'evenok-hl-todo-fixme)
+         (cons (upcase "info")  'evenok-hl-todo-info)
+         (cons (upcase "pndg")  'evenok-hl-todo-pndg)
+         (cons (upcase "prgs")  'evenok-hl-todo-prgs)
+         (cons (upcase "todo")  'evenok-hl-todo-todo)
+         (cons (upcase "xxx+")  'evenok-hl-todo-xxx))))
+  (custom-theme-set-faces 'evenok
+    `(evenok-hl-todo-fixme ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-red :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
+    `(evenok-hl-todo-info ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-green :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
+    `(evenok-hl-todo-pndg ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-orange :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
+    `(evenok-hl-todo-prgs ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-purple :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
+    `(evenok-hl-todo-todo ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-red :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
+    `(evenok-hl-todo-xxx ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-red :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t))
+
+  (defface evenok-org-info nil nil)
+  (defface evenok-org-cncl nil nil)
+  (defface evenok-org-pndg nil nil)
+  (defface evenok-org-prgs nil nil)
+  (custom-theme-set-variables 'evenok
+    '(org-todo-keyword-faces
+       (list
+         ;; apply `upcase' on lower-cased strings to avoid
+         ;; highlighting by `hl-todo-mode'.
+         (cons (upcase "info") 'evenok-org-info)
+         (cons (upcase "cncl") 'evenok-org-cncl)
+         (cons (upcase "prgs") 'evenok-org-prgs)
+         (cons (upcase "pndg") 'evenok-org-pndg))))
+  (custom-theme-set-faces 'evenok
+    `(evenok-org-info ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-green :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
+    `(evenok-org-cncl ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-green :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
+    `(evenok-org-pndg ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-orange :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)
+    `(evenok-org-prgs ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-purple :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)) t)))
 
 ;;;; provide theme
 
