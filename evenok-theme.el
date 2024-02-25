@@ -1,8 +1,5 @@
 ;; -*- lexical-binding: t; truncate-lines: t; -*-
 
-;; TODO: report a bug to emacs that setting face attributes of default
-;; face to unspecified breaks things and should not be permitted.
-
 ;; TODO: common colors for eshell-ls-* and dired-*.
 
 ;;;; conventions
