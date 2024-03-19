@@ -1680,7 +1680,7 @@
       `(pdf-occur-document-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(pdf-occur-page-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(pdf-view-rectangle ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
-      `(pdf-view-region ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
+      `(pdf-view-region ((t :background ,grey :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(perl-heredoc ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(perl-non-scalar-variable ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(phi-replace-preview-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
@@ -2099,7 +2099,8 @@
     `(frame-background-mode 'dark)
     `(highlight-parentheses-colors nil)
     `(ibuffer-fontification-alist nil)
-    `(pdf-view-midnight-colors (cons ,bright ,black))
+    ;; use `white' instead of `bright' for better readability.
+    `(pdf-view-midnight-colors (cons ,white ,black))
     (seq-map
       (pcase-lambda (`(,sy _))
         (list sy (list 'quote (intern (concat "evenok-" (symbol-name sy)))) t))
