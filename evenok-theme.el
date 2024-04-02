@@ -17,8 +17,34 @@
 
 (deftheme evenok)
 
-;;;; palette
 (let* (
+
+    ;;;; configuration
+
+    ;;;;;; font families
+
+    (default    "Iosevka Fixed")
+    (curly      "Iosevka Fixed Curly") ;; Curly
+    (andale     "Iosevka Fixed SS01")  ;; Andale Mono
+    (anonymous  "Iosevka Fixed SS02")  ;; Anonymous Pro
+    (consolas   "Iosevka Fixed SS03")  ;; Consolas
+    (menlo      "Iosevka Fixed SS04")  ;; Menlo
+    (fira       "Iosevka Fixed SS05")  ;; Fira Mono
+    (liberation "Iosevka Fixed SS06")  ;; Liberation Mono
+    (monaco     "Iosevka Fixed SS07")  ;; Monaco
+    (pragmata   "Iosevka Fixed SS08")  ;; Pragmata Pro
+    (source     "Iosevka Fixed SS09")  ;; Source Code Pro
+    (envy       "Iosevka Fixed SS10")  ;; Envy Code R
+    (x          "Iosevka Fixed SS11")  ;; X Window
+    (ubuntu     "Iosevka Fixed SS12")  ;; Ubuntu Mono
+    (lucida     "Iosevka Fixed SS13")  ;; Lucida
+    (jetbrains  "Iosevka Fixed SS14")  ;; JetBrains Mono
+    (plex       "Iosevka Fixed SS15")  ;; IBM Plex Mono
+    (pt         "Iosevka Fixed SS16")  ;; PT Mono
+    (recursive  "Iosevka Fixed SS17")  ;; Recursive Mono
+    (input      "Iosevka Fixed SS18")  ;; Input Mono
+
+    ;;;;;; colors
 
     ;; L=0%
     (black "#000000")
@@ -273,7 +299,7 @@
       `(debbugs-gnu-stale-5 ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(debbugs-gnu-tagged ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(debbugs-gnu-title ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,white :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
-      `(default ((t :background ,black :box nil :extend nil :family "Iosevka Fixed Curly" :foreground ,bright :height 120 :inherit nil :inverse-video nil :overline nil :slant normal :stipple nil :strike-through nil :underline nil :weight regular :width normal)))
+      `(default ((t :background ,black :box nil :extend nil :family ,default :foreground ,bright :height 120 :inherit nil :inverse-video nil :overline nil :slant normal :stipple nil :strike-through nil :underline nil :weight regular :width normal)))
       `(devdocs-code-block ((t :background ,dark :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(diary ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(diary-anniversary ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
@@ -847,10 +873,10 @@
       `(font-lock-bracket-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(font-lock-builtin-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-cyan :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(font-lock-comment-delimiter-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,faded :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight normal :width unspecified)))
-      `(font-lock-comment-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,faded :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight normal :width unspecified)))
+      `(font-lock-comment-face ((t :background unspecified :box unspecified :extend unspecified :family ,recursive :foreground ,faded :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight normal :width unspecified)))
       `(font-lock-constant-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-orange :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(font-lock-delimiter-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
-      `(font-lock-doc-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,faded :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
+      `(font-lock-doc-face ((t :background unspecified :box unspecified :extend unspecified :family ,pt :foreground ,faded :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(font-lock-doc-markup-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(font-lock-escape-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(font-lock-function-call-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
@@ -858,7 +884,7 @@
       `(font-lock-keyword-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-magenta :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(font-lock-misc-punctuation-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(font-lock-negation-char-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-green :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
-      `(font-lock-number-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
+      `(font-lock-number-face ((t :background unspecified :box unspecified :extend unspecified :family ,pragmata :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(font-lock-operator-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(font-lock-preprocessor-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-blue :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(font-lock-property-name-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
@@ -867,7 +893,7 @@
       `(font-lock-regexp-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-green :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(font-lock-regexp-grouping-backslash ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-yellow :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(font-lock-regexp-grouping-construct ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-magenta :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
-      `(font-lock-string-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-green :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
+      `(font-lock-string-face ((t :background unspecified :box unspecified :extend unspecified :family ,plex :foreground ,bright-green :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(font-lock-type-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-yellow :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(font-lock-variable-name-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-red :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(font-lock-variable-use-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
