@@ -27,31 +27,59 @@
 ;; along with this program. If not, see
 ;; <https://www.gnu.org/licenses/>.
 
+;;; Commentary:
+
+;; The `evenok' theme has three characteristic features.
+
+;; First and foremost, `evenok' uses the OKLCH color space in order to
+;; evenly distribute its eight base colors within the color spectrum
+;; as it is perceived by humans. It also allows to choose colors with
+;; equally perceived lightness.
+;; - https://bottosson.github.io/posts/oklab/
+;; - https://oklch.com
+
+;; Secondly, the `evenok' theme uses different style sets of the
+;; monospace Iosevka font family that align perfectly with each other.
+;; - https://github.com/be5invis/iosevka
+
+;; Thirdly, the `evenok' theme tries to set all known face attributes
+;; to `unspecified' in order to wipe all default faces.
+;; - (info "(elisp) Face Attributes")
+
+;; `evenok' must be considered work-in-progress because it still
+;; includes many personal settings from its author and maintainer.
+
+;;; Roadmap:
+
+;; TODO: Remove personal settings.
+
+;; TODO: Consider separating out a theme that sets all face attributes
+;; to unspecified.
+
+;; TODO: Use common colors for `eshell-ls-*' and `dired-*'.
+
+;;; Design Choices:
+
+;; Links, buttons, or more generally clickables are underlined.
+
+;; Faces which denote differences use following colors:
+;; - added:   green
+;; - changed: purple
+;; - removed: red
+
 ;;; Code:
 
-;; TODO: report a bug to emacs that setting face attributes of default
-;; face to unspecified breaks things and should not be permitted.
-
-;; TODO: common colors for eshell-ls-* and dired-*.
-
-;;;; conventions
-
-;; links, buttons
-;; underline
-
-;; | added | changed | removed |
-;; | green | purple  | red     |
-
-;;;; define theme
+;;;; Declaration
 
 (deftheme evenok)
 
 (let* (
 
-    ;;;; configuration
+;;;; Configuration
 
-    ;;;;;; font families
+;;;;;; Font Families
 
+    ;; https://github.com/be5invis/iosevka/blob/main/doc/stylistic-sets.md
     (default    "Iosevka Fixed")
     (curly      "Iosevka Fixed Curly") ;; Curly
     (andale     "Iosevka Fixed SS01")  ;; Andale Mono
@@ -73,7 +101,7 @@
     (recursive  "Iosevka Fixed SS17")  ;; Recursive Mono
     (input      "Iosevka Fixed SS18")  ;; Input Mono
 
-    ;;;;;; colors
+;;;;;; Colors
 
     ;; L=0%
     (black "#000000")
@@ -114,7 +142,10 @@
     ;; L=100%
     (white "#ffffff")
 
-    ;;;; faces (given as faces)
+;;;; Face Definitions
+
+;;;;;; Faces Given as Faces
+
     (faces-as-faces (list
 
       `(abbrev-table-name ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
@@ -2125,7 +2156,8 @@
       `(xref-match ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(yaml-tab-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground unspecified :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))))
 
-    ;;;; faces (given as variables)
+;;;;;; Faces Given as Variables
+
     (faces-as-variables (list
 
       `(gnus-face-0 ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,white :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
@@ -2143,16 +2175,16 @@
       `(ibuffer-marked-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-orange :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant italic :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
       `(ibuffer-title-face ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,faded :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified))))))
 
-  ;;;; set faces and variables of custom theme
+;;;; Application of Faces and Variables to Theme
 
-  ;;;;;; faces-as-faces
+;;;;;; Faces Given as Faces
 
   ;; set faces-as-faces as faces of theme
   (apply #'custom-theme-set-faces 'evenok faces-as-faces)
 
-  ;;;;;; faces-as-variables
+;;;;;; Faces Given as Variables
 
-  ;;;;;;;; automatic
+;;;;;;;; Automatic
 
   ;; for each face-as-variable, declare a face. to do that, prefix the
   ;; symbol with evenok-.
@@ -2168,6 +2200,22 @@
   ;; for each face-as-variable, set it to the previously declared
   ;; face.
   (apply #'custom-theme-set-variables 'evenok
+    (seq-map
+      (pcase-lambda (`(,sy _))
+        (list sy (list 'quote (intern (concat "evenok-" (symbol-name sy)))) t))
+      faces-as-variables))
+
+  ;; for each face-as-variable, initialize the previously declared
+  ;; face.
+  (apply #'custom-theme-set-faces 'evenok
+    (seq-map
+      (pcase-lambda (`(,sy ,sp))
+        (list (intern (concat "evenok-" (symbol-name sy))) sp t))
+      faces-as-variables))
+
+;;;;;;;; Manual
+
+  (funcall #'custom-theme-set-variables 'evenok
     `(ansi-color-faces-vector [default bold shadow italic underline success warning error])
     `(ansi-color-names-vector [,grey ,bright-red ,bright-green ,bright-yellow ,bright-blue ,bright-magenta ,bright-cyan ,bright])
     `(erc-log-match-format
@@ -2182,21 +2230,7 @@
     `(highlight-parentheses-colors nil)
     `(ibuffer-fontification-alist nil)
     ;; use `white' instead of `bright' for better readability.
-    `(pdf-view-midnight-colors (cons ,white ,black))
-    (seq-map
-      (pcase-lambda (`(,sy _))
-        (list sy (list 'quote (intern (concat "evenok-" (symbol-name sy)))) t))
-      faces-as-variables))
-
-  ;; for each face-as-variable, initialize the previously declared
-  ;; face.
-  (apply #'custom-theme-set-faces 'evenok
-    (seq-map
-      (pcase-lambda (`(,sy ,sp))
-        (list (intern (concat "evenok-" (symbol-name sy))) sp t))
-      faces-as-variables))
-
-  ;;;;;;;; manual
+    `(pdf-view-midnight-colors (cons ,white ,black)))
 
   (defface evenok-flymake-error-bitmap nil nil :group 'flymake :group 'evenok)
   (custom-theme-set-variables 'evenok
@@ -2221,6 +2255,7 @@
     "String to which `evenok-gnus-summary-dummy' face will be applied. The
 result will be put in place of `%uE' within
 `gnus-summary-dummy-line-format'."
+    :type 'string
     :group 'gnus-visual :group 'evenok)
   (defface evenok-gnus-summary-dummy nil nil :group 'gnus-visual :group 'evenok)
   (defun gnus-user-format-function-E (header)
@@ -2276,22 +2311,17 @@ result will be put in place of `%uE' within
     `(evenok-org-pndg ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-orange :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
     `(evenok-org-prgs ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-purple :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))))
 
-;;;; provide theme
+;;;; End
 
 (provide-theme 'evenok)
 
-;;;; add theme to respective load-path
-
+;; Add to `custom-theme-load-path'.
 ;;;###autoload
 (when load-file-name
   (add-to-list 'custom-theme-load-path
     (file-name-directory load-file-name)))
 
-;;;; provide feature
-
 (provide 'evenok-theme)
-
-;;;; file-local variables
 
 ;; Local Variables:
 ;; sort-fold-case: t
