@@ -31,7 +31,6 @@
 
 ;; TODO: report a bug to emacs that setting face attributes of default
 ;; face to unspecified breaks things and should not be permitted.
->>>>>>> pub
 
 ;; TODO: common colors for eshell-ls-* and dired-*.
 
