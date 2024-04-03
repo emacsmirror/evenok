@@ -2158,7 +2158,11 @@
   ;; symbol with evenok-.
   (seq-do
     (pcase-lambda (`(,sy _))
-      (eval (list 'defface (intern (concat "evenok-" (symbol-name sy))) nil nil)))
+      (eval
+        (list
+          'defface
+          (intern (concat "evenok-" (symbol-name sy)))
+          nil nil :group ''evenok)))
     faces-as-variables)
 
   ;; for each face-as-variable, set it to the previously declared
@@ -2194,19 +2198,19 @@
 
   ;;;;;;;; manual
 
-  (defface evenok-flymake-error-bitmap nil nil)
+  (defface evenok-flymake-error-bitmap nil nil :group 'flymake :group 'evenok)
   (custom-theme-set-variables 'evenok
     '(flymake-error-bitmap (list 'exclamation-mark 'evenok-flymake-error-bitmap)))
   (custom-theme-set-faces 'evenok
     `(evenok-flymake-error-bitmap ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-red :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified))))
 
-  (defface evenok-flymake-warning-bitmap nil nil)
+  (defface evenok-flymake-warning-bitmap nil nil :group 'flymake :group 'evenok)
   (custom-theme-set-variables 'evenok
     '(flymake-warning-bitmap (list 'question-mark 'evenok-flymake-warning-bitmap)))
   (custom-theme-set-faces 'evenok
     `(evenok-flymake-warning-bitmap ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-orange :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified))))
 
-  (defface evenok-flymake-note-bitmap nil nil)
+  (defface evenok-flymake-note-bitmap nil nil :group 'flymake :group 'evenok)
   (custom-theme-set-variables 'evenok
     '(flymake-note-bitmap (list 'question-mark 'evenok-flymake-note-bitmap)))
   (custom-theme-set-faces 'evenok
@@ -2215,7 +2219,7 @@
   ;; TODO: introduce a variable
   ;; `evenok-gnus-summary-dummy-line-format' and use that in place of
   ;; the hard-coded format below.
-  (defface evenok-gnus-summary-dummy nil nil)
+  (defface evenok-gnus-summary-dummy nil nil :group 'gnus-visual :group 'evenok)
   (defun gnus-user-format-function-E (header)
     (propertize
       (concat
@@ -2225,12 +2229,12 @@
   (custom-theme-set-faces 'evenok
     `(evenok-gnus-summary-dummy ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,faded :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified))))
 
-  (defface evenok-hl-todo-fixme nil nil)
-  (defface evenok-hl-todo-info  nil nil)
-  (defface evenok-hl-todo-pndg  nil nil)
-  (defface evenok-hl-todo-prgs  nil nil)
-  (defface evenok-hl-todo-todo  nil nil)
-  (defface evenok-hl-todo-xxx   nil nil)
+  (defface evenok-hl-todo-fixme nil nil :group 'hl-todo :group 'evenok)
+  (defface evenok-hl-todo-info  nil nil :group 'hl-todo :group 'evenok)
+  (defface evenok-hl-todo-pndg  nil nil :group 'hl-todo :group 'evenok)
+  (defface evenok-hl-todo-prgs  nil nil :group 'hl-todo :group 'evenok)
+  (defface evenok-hl-todo-todo  nil nil :group 'hl-todo :group 'evenok)
+  (defface evenok-hl-todo-xxx   nil nil :group 'hl-todo :group 'evenok)
   (custom-theme-set-variables 'evenok
     '(hl-todo-keyword-faces
        (list
@@ -2250,10 +2254,10 @@
     `(evenok-hl-todo-todo ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-red :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified)))
     `(evenok-hl-todo-xxx ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-red :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified))))
 
-  (defface evenok-org-info nil nil)
-  (defface evenok-org-cncl nil nil)
-  (defface evenok-org-pndg nil nil)
-  (defface evenok-org-prgs nil nil)
+  (defface evenok-org-info nil nil :group 'org :group 'evenok)
+  (defface evenok-org-cncl nil nil :group 'org :group 'evenok)
+  (defface evenok-org-pndg nil nil :group 'org :group 'evenok)
+  (defface evenok-org-prgs nil nil :group 'org :group 'evenok)
   (custom-theme-set-variables 'evenok
     '(org-todo-keyword-faces
        (list
