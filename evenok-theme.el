@@ -2216,14 +2216,17 @@
   (custom-theme-set-faces 'evenok
     `(evenok-flymake-note-bitmap ((t :background unspecified :box unspecified :extend unspecified :family unspecified :foreground ,bright-blue :height unspecified :inherit unspecified :inverse-video unspecified :overline unspecified :slant unspecified :stipple unspecified :strike-through unspecified :underline unspecified :weight unspecified :width unspecified))))
 
-  ;; TODO: introduce a variable
-  ;; `evenok-gnus-summary-dummy-line-format' and use that in place of
-  ;; the hard-coded format below.
+  (defcustom evenok-gnus-summary-dummy-line-format
+    "                                           ╤ "
+    "String to which `evenok-gnus-summary-dummy' face will be applied. The
+result will be put in place of `%uE' within
+`gnus-summary-dummy-line-format'."
+    :group 'gnus-visual :group 'evenok)
   (defface evenok-gnus-summary-dummy nil nil :group 'gnus-visual :group 'evenok)
   (defun gnus-user-format-function-E (header)
     (propertize
       (concat
-        "                                           ╤ "
+        evenok-gnus-summary-dummy-line-format
         (mail-header-subject header))
       'face 'evenok-gnus-summary-dummy))
   (custom-theme-set-faces 'evenok
