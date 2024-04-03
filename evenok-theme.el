@@ -1,4 +1,33 @@
-;; -*- lexical-binding: t; -*-
+;;; evenok-theme.el --- Theme with perceptively evenly distributed colors  -*- lexical-binding: t; -*-
+
+;; Copyright (C) 2024 Free Software Foundation, Inc.
+
+;; Author:                  Mekeor Melire <mekeor@posteo.de>
+;; Created:                 2024
+;; Homepage:                https://codeberg.org/mekeor/emacs-evenok
+;; Keywords:                faces, theme
+;; Maintainer:              Mekeor Melire <mekeor@posteo.de>
+;; Package-Requires:        ((emacs "28.1"))
+;; SPDX-License-Identifier: GPL-3.0-or-later
+;; Version:                 0.0.1
+
+;; This file is NOT part of GNU Emacs.
+
+;; This program is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License as
+;; published by the Free Software Foundation, either version 3 of the
+;; License, or (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful, but
+;; WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+;; General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program. If not, see
+;; <https://www.gnu.org/licenses/>.
+
+;;; Code:
 
 ;; TODO: report a bug to emacs that setting face attributes of default
 ;; face to unspecified breaks things and should not be permitted.
@@ -2230,4 +2259,5 @@
 
 ;; Local Variables:
 ;; sort-fold-case: t
+;; eval: (funcall-interactively #'toggle-truncate-lines 1)
 ;; End:
