@@ -709,7 +709,7 @@
       `(woman-addition ((t :foreground ,bright-yellow)))
       `(woman-bold ((t :foreground ,white)))
       `(woman-italic ((t :slant italic)))
-      `(woman-unknown ((t :underline (:color ,grey :style wave :position nil))))
+      `(woman-unknown ((t :underline (:color ,grey :style wave :position nil))))))
 
 ;;;;;;; Faces Given as Variables
 
