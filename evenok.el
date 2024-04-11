@@ -308,6 +308,7 @@
             `(font-lock-variable-name-face ((t :foreground ,bright-red)))
             `(font-lock-warning-face ((t :foreground ,bright-red)))
             `(fringe ((t :foreground ,grey)))
+            `(git-commit-summary ((t :foreground ,white)))
             `(git-timemachine-commit ((t :slant italic)))
             `(git-timemachine-minibuffer-author-face ((t :slant italic)))
             `(git-timemachine-minibuffer-detail-face ((t :foreground ,white)))
