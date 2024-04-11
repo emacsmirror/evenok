@@ -20,21 +20,21 @@
 
 ;; This program is distributed in the hope that it will be useful, but
 ;; WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 ;; General Public License for more details.
 
 ;; You should have received a copy of the GNU General Public License
-;; along with this program. If not, see
+;; along with this program.  If not, see
 ;; <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
 
-;; `evenok' is a package that provides themes with some common
-;; characteristic features:
+;; `evenok' is a package that provides themes with some common radical
+;; features:
 
 ;; `evenok' themes use the OKLCH color space in order to evenly
 ;; distribute its eight base colors within the color spectrum as it is
-;; perceived by humans. This also allows to choose colors with equally
+;; perceived by humans.  This also allows to choose colors with equally
 ;; perceived lightness.
 ;; - https://bottosson.github.io/posts/oklab/
 ;; - https://oklch.com
@@ -46,22 +46,21 @@
 ;; `evenok' themes assume that you loaded the `unsp-theme' prior in
 ;; order to unspecify all face attributes.
 
-;; `evenok' must be considered work-in-progress because it still
-;; includes many personal settings from its author and maintainer.
+;;;; Status of Development
 
-;;;; Roadmap:
+;; `evenok' is in EXPERIMENTAL stage and currently contains many
+;; personal settings from its author and maintainer.
 
-;; TODO: Add Usage section to Commentary.
+;;;; TODO:
 
-;; TODO: use `custom-declare-face' instead of a composition of `eval'
-;; and `defface'.
-
-;; TODO: Remove personal settings.
-
-;; TODO: Consider separating out a theme that sets all face attributes
-;; to unspecified.
-
-;; TODO: Use common colors for `eshell-ls-*' and `dired-*'.
+;; - Add Usage section to Commentary.
+;; - Use `custom-declare-face' instead of a composition of `eval'
+;;   and `defface'.
+;; - Remove personal settings.
+;; - Consider separating out a theme that sets all face attributes
+;;   to unspecified.
+;; - Use common colors for `eshell-ls-*' and `dired-*'.
+;; - Re-introduce deffaces.
 
 ;;;; Design Choices:
 
@@ -88,25 +87,25 @@
     (let*
       ;; https://github.com/be5invis/iosevka/blob/main/doc/stylistic-sets.md
       ( (default    "Iosevka Fixed")
-        (curly      "Iosevka Fixed Curly") ;; Curly
-        (andale     "Iosevka Fixed SS01")  ;; Andale Mono
-        (anonymous  "Iosevka Fixed SS02")  ;; Anonymous Pro
-        (consolas   "Iosevka Fixed SS03")  ;; Consolas
-        (menlo      "Iosevka Fixed SS04")  ;; Menlo
-        (fira       "Iosevka Fixed SS05")  ;; Fira Mono
-        (liberation "Iosevka Fixed SS06")  ;; Liberation Mono
-        (monaco     "Iosevka Fixed SS07")  ;; Monaco
-        (pragmata   "Iosevka Fixed SS08")  ;; Pragmata Pro
-        (source     "Iosevka Fixed SS09")  ;; Source Code Pro
-        (envy       "Iosevka Fixed SS10")  ;; Envy Code R
-        (x          "Iosevka Fixed SS11")  ;; X Window
-        (ubuntu     "Iosevka Fixed SS12")  ;; Ubuntu Mono
-        (lucida     "Iosevka Fixed SS13")  ;; Lucida
-        (jetbrains  "Iosevka Fixed SS14")  ;; JetBrains Mono
-        (plex       "Iosevka Fixed SS15")  ;; IBM Plex Mono
-        (pt         "Iosevka Fixed SS16")  ;; PT Mono
-        (recursive  "Iosevka Fixed SS17")  ;; Recursive Mono
-        (input      "Iosevka Fixed SS18")  ;; Input Mono
+        (curly      "Iosevka Fixed Curly")
+        (andale     "Iosevka Fixed SS01")
+        (anonymous  "Iosevka Fixed SS02")
+        (consolas   "Iosevka Fixed SS03")
+        (menlo      "Iosevka Fixed SS04")
+        (fira       "Iosevka Fixed SS05")
+        (liberation "Iosevka Fixed SS06")
+        (monaco     "Iosevka Fixed SS07")
+        (pragmata   "Iosevka Fixed SS08")
+        (source     "Iosevka Fixed SS09")
+        (envy       "Iosevka Fixed SS10")
+        (x-window   "Iosevka Fixed SS11")
+        (ubuntu     "Iosevka Fixed SS12")
+        (lucida     "Iosevka Fixed SS13")
+        (jetbrains  "Iosevka Fixed SS14")
+        (plex       "Iosevka Fixed SS15")
+        (pt         "Iosevka Fixed SS16")
+        (recursive  "Iosevka Fixed SS17")
+        (input      "Iosevka Fixed SS18")
 
 ;;;; Theming of Faces as Faces
 
@@ -179,7 +178,7 @@
             `(custom-variable-tag ((t :foreground ,bright-yellow)))
             `(custom-visibility ((t :underline t)))
             `(debbugs-gnu-title ((t :foreground ,white)))
-            `(default ((t :background ,black :box nil :extend nil :family ,default :foreground ,bright :height nil :inherit nil :inverse-video nil :overline nil :slant normal :stipple nil :strike-through nil :underline nil :weight regular :width normal)))
+            `(default ((t :background ,black :family ,default :foreground ,bright)))
             `(devdocs-code-block ((t :background ,dark)))
             `(diary-button ((t :underline t)))
             `(dictionary-button-face ((t :underline t)))
@@ -689,13 +688,13 @@
 
 ;;;; Application of Faces as Faces
 
-      ;; set faces-as-faces as faces of theme
+      ;; Set `faces-as-faces' as faces of theme.
       (apply #'custom-theme-set-faces name faces-as-faces)
 
 ;;;; Automatic Application of Faces as Variables
 
-      ;; for each face-as-variable, declare a face. to do that, prefix the
-      ;; symbol with $name-.
+      ;; For each face-as-variable, declare a face.  To do that,
+      ;; prefix the symbol with name-.
       (seq-do
         (pcase-lambda (`(,sy _))
           (eval
@@ -705,7 +704,7 @@
               nil nil :group ''evenok))) ;; TODO: improve groups
         faces-as-variables)
 
-      ;; for each face-as-variable, set it to the previously declared
+      ;; For each face-as-variable, set it to the previously declared
       ;; face.
       (apply #'custom-theme-set-variables name
         (seq-map
@@ -716,7 +715,7 @@
                   (concat (symbol-name name) "-" (symbol-name sy)))) t))
           faces-as-variables))
 
-      ;; for each face-as-variable, initialize the previously declared
+      ;; For each face-as-variable, initialize the previously declared
       ;; face.
       (apply #'custom-theme-set-faces name
         (seq-map
@@ -742,10 +741,8 @@
         `(frame-background-mode 'dark)
         `(highlight-parentheses-colors nil)
         `(ibuffer-fontification-alist nil)
-        ;; use `white' instead of `bright' for better readability.
+        ;; TODO: midnight should always be white on black.
         `(pdf-view-midnight-colors (cons ,white ,black)))
-
-      ;; TODO
 
       ;; (defface evenok-flymake-error-bitmap nil nil :group 'flymake :group 'evenok)
       ;; (custom-theme-set-variables 'evenok
@@ -767,7 +764,7 @@
 
       ;;     (defcustom evenok-gnus-summary-dummy-line-format
       ;;       "                                           ╤ "
-      ;;       "String to which `evenok-gnus-summary-dummy' face will be applied. The
+      ;;       "String to which `evenok-gnus-summary-dummy' face will be applied.  The
       ;; result will be put in place of `%uE' within
       ;; `gnus-summary-dummy-line-format'."
       ;;       :type 'string
