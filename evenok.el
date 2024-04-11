@@ -53,14 +53,13 @@
 
 ;;;; TODO:
 
+;; - Remove personal settings? Re-introduce deffaces? Use
+;;   `custom-declare-face' instead of a composition of `eval' and
+;;   `defface'.
 ;; - Add Usage section to Commentary.
-;; - Use `custom-declare-face' instead of a composition of `eval'
-;;   and `defface'.
-;; - Remove personal settings.
-;; - Consider separating out a theme that sets all face attributes
-;;   to unspecified.
+;; - Add Dependencies section to Commentary.
+;; - Update screenshots; add one for light variant.
 ;; - Use common colors for `eshell-ls-*' and `dired-*'.
-;; - Re-introduce deffaces.
 
 ;;;; Design Choices:
 
@@ -738,7 +737,7 @@
              (propertize "%m"
                'wrap-prefix (list 'space :width 4)
                'line-prefix (list 'space :width 4))))
-        `(frame-background-mode 'dark)
+        ;; `(frame-background-mode 'dark) ;; TODO
         `(highlight-parentheses-colors nil)
         `(ibuffer-fontification-alist nil)
         ;; TODO: midnight should always be white on black.
