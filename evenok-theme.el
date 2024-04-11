@@ -29,7 +29,7 @@
 
 ;;; Commentary:
 
-;; The `evenok' theme has three characteristic features.
+;; The `evenok' theme has some characteristic features.
 
 ;; First and foremost, `evenok' uses the OKLCH color space in order to
 ;; evenly distribute its eight base colors within the color spectrum
@@ -38,18 +38,19 @@
 ;; - https://bottosson.github.io/posts/oklab/
 ;; - https://oklch.com
 
-;; Secondly, the `evenok' theme uses different style sets of the
-;; monospace Iosevka font family that align perfectly with each other.
+;; Secondly, `evenok' theme uses different style sets of the monospace
+;; Iosevka font family that align perfectly with each other.
 ;; - https://github.com/be5invis/iosevka
 
-;; Thirdly, the `evenok' theme tries to set all known face attributes
-;; to `unspecified' in order to wipe all default faces.
-;; - (info "(elisp) Face Attributes")
+;; Thirdly, `evenok' theme assumes that you loaded the `unsp-theme'
+;; prior in order to unspecify all face attributes.
 
 ;; `evenok' must be considered work-in-progress because it still
 ;; includes many personal settings from its author and maintainer.
 
-;;; Roadmap:
+;;;; Roadmap:
+
+;; TODO: Add Usage section to Commentary.
 
 ;; TODO: Remove personal settings.
 
@@ -58,7 +59,7 @@
 
 ;; TODO: Use common colors for `eshell-ls-*' and `dired-*'.
 
-;;; Design Choices:
+;;;; Design Choices:
 
 ;; Links, buttons, or more generally clickables are underlined.
 
@@ -67,17 +68,17 @@
 ;; - changed: purple
 ;; - removed: red
 
-;;; Code:
+;;;; Code:
 
-;;;; Declaration
+;;;;; Declaration
 
 (deftheme evenok)
 
 (let* (
 
-;;;; Configuration
+;;;;; Configuration
 
-;;;;;; Font Families
+;;;;;;; Font Families
 
     ;; https://github.com/be5invis/iosevka/blob/main/doc/stylistic-sets.md
     (default    "Iosevka Fixed")
@@ -101,7 +102,7 @@
     (recursive  "Iosevka Fixed SS17")  ;; Recursive Mono
     (input      "Iosevka Fixed SS18")  ;; Input Mono
 
-;;;;;; Colors
+;;;;;;; Colors
 
     ;; L=0%
     (black "#000000")
@@ -142,9 +143,9 @@
     ;; L=100%
     (white "#ffffff")
 
-;;;; Face Definitions
+;;;;; Face Definitions
 
-;;;;;; Faces Given as Faces
+;;;;;;; Faces Given as Faces
 
     (faces-as-faces (list
 
@@ -707,7 +708,7 @@
       `(woman-italic ((t :slant italic)))
       `(woman-unknown ((t :underline (:color ,grey :style wave :position nil))))
 
-;;;;;; Faces Given as Variables
+;;;;;;; Faces Given as Variables
 
     (faces-as-variables (list
 
@@ -723,16 +724,16 @@
       `(ibuffer-marked-face ((t :foreground ,bright-orange :slant italic)))
       `(ibuffer-title-face ((t :foreground ,faded))))))
 
-;;;; Application of Faces and Variables to Theme
+;;;;; Application
 
-;;;;;; Faces Given as Faces
+;;;;;;; Faces Given as Faces
 
   ;; set faces-as-faces as faces of theme
   (apply #'custom-theme-set-faces 'evenok faces-as-faces)
 
-;;;;;; Faces Given as Variables
+;;;;;;; Faces Given as Variables
 
-;;;;;;;; Automatic
+;;;;;;;;; Automatic
 
   ;; for each face-as-variable, declare a face. to do that, prefix the
   ;; symbol with evenok-.
@@ -761,7 +762,7 @@
         (list (intern (concat "evenok-" (symbol-name sy))) sp t))
       faces-as-variables))
 
-;;;;;;;; Manual
+;;;;;;;;; Manual
 
   (funcall #'custom-theme-set-variables 'evenok
     `(ansi-color-faces-vector [default bold shadow italic underline success warning error])
@@ -859,7 +860,7 @@ result will be put in place of `%uE' within
     `(evenok-org-pndg ((t :foreground ,bright-orange)))
     `(evenok-org-prgs ((t :foreground ,bright-purple)))))
 
-;;;; End
+;;;;; Provide
 
 (provide-theme 'evenok)
 
@@ -871,7 +872,4 @@ result will be put in place of `%uE' within
 
 (provide 'evenok-theme)
 
-;; Local Variables:
-;; sort-fold-case: t
-;; eval: (funcall-interactively #'toggle-truncate-lines 1)
-;; End:
+;;; evenok-theme.el ends here
