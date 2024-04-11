@@ -1,4 +1,4 @@
-;;; evenok-theme.el --- Theme with perceptively evenly distributed colors  -*- lexical-binding: t; -*-
+;;; evenok-theme.el --- Theme with Perceptively Evenly Distributed Colors  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 Free Software Foundation, Inc.
 
@@ -51,6 +51,9 @@
 ;;;; Roadmap:
 
 ;; TODO: Add Usage section to Commentary.
+
+;; TODO: use `custom-declare-face' instead of a composition of `eval'
+;; and `defface'.
 
 ;; TODO: Remove personal settings.
 
