@@ -66,7 +66,9 @@
 (defgroup evenok nil
   "Theme with perceptively evenly distributed colors."
   :group 'faces
-  :link '(url-link :tag "Homepage" "https://codeberg.org/mekeor/emacs-evenok")
+  :link '(url-link
+           :tag "Homepage"
+           "https://codeberg.org/mekeor/emacs-evenok")
   :link '(emacs-library-link :tag "Library Source" "evenok.el")
   :prefix "evenok-")
 

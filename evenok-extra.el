@@ -25,7 +25,10 @@
 
 ;;; Code:
 
+(require 'evenok)
+
 (defgroup evenok-extra nil
+  "Opinionated extras to `evenok'."
   :group 'evenok
   :prefix "evenok-extra-")
 
