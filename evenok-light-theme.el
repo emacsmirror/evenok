@@ -28,42 +28,16 @@
 
 (require 'evenok)
 
-(let
-  ((palette
-     '( (black          . "#ffffff") ;; L=100%
-        (dark           . "#dedede") ;; L=90%
-        (dim            . "#bebebe") ;; L=80%
-        (grey           . "#9e9e9e") ;; L=70%
-        (grey-red       . "#c5917c")
-        (grey-orange    . "#b19c6c")
-        (grey-green     . "#6dad9e")
-        (grey-purple    . "#ad92be")
-        (grey-magenta   . "#c38d9f")
-        (faded          . "#808080") ;; L=60%
-        (faded-red      . "#a4735f")
-        (faded-orange   . "#927e4e")
-        (faded-green    . "#4e8e80")
-        (faded-purple   . "#8f749f")
-        (faded-magenta  . "#a36f80")
-        (bright         . "#424242") ;; L=38%
-        (bright-red     . "#613523")
-        (bright-orange  . "#52400d")
-        (bright-yellow  . "#344a21")
-        (bright-green   . "#014e42")
-        (bright-cyan    . "#014a5d") ;; oklch(38% 0.07 222.36)
-        (bright-blue    . "#324168")
-        (bright-purple  . "#4f375d")
-        (bright-magenta . "#603143")
-        (white          . "#000000")))) ;; L=0%
+(evenok-theme 'evenok-light palette)
 
-  (evenok-theme 'evenok-light palette)
+(let-alist evenok-palette-light
 
   (custom-theme-set-faces 'evenok-light
     '(default ((t :weight demibold))))
 
   (custom-theme-set-variables 'evenok-light
     `(frame-background-mode 'light)
-    `(pdf-view-midnight-colors (cons ,black ,white))))
+    `(pdf-view-midnight-colors (cons ,.black ,.white))))
 
 (provide-theme 'evenok-light)
 

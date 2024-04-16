@@ -28,39 +28,13 @@
 
 (require 'evenok)
 
-(let
-  ((palette
-     '( (black          . "#000000") ;; L=0%
-        (dark           . "#1b1b1b") ;; L=22%
-        (dim            . "#3a3a3a") ;; L=35%
-        (grey           . "#5d5d5d") ;; L=48%
-        (grey-red       . "#96365d")
-        (grey-orange    . "#993d0d")
-        (grey-green     . "#3d6c01")
-        (grey-purple    . "#3d57a9")
-        (grey-magenta   . "#784293")
-        (faded          . "#777777") ;; L=57%
-        (faded-red      . "#b45177")
-        (faded-orange   . "#b7582e")
-        (faded-green    . "#56872a")
-        (faded-purple   . "#5572c6")
-        (faded-magenta  . "#935daf")
-        (bright         . "#a9a9a9") ;; L=73.6%
-        (bright-red     . "#ed83a9") ;; oklch(73.6% 0.135 358)
-        (bright-orange  . "#f08b61")
-        (bright-yellow  . "#cda430")
-        (bright-green   . "#87bc5f")
-        (bright-cyan    . "#04c5aa")
-        (bright-blue    . "#11bbe7")
-        (bright-purple  . "#85a5ff")
-        (bright-magenta . "#c78fe6")
-        (white          . "#ffffff")))) ;; L=100%
+(evenok-theme 'evenok-dark palette)
 
-  (evenok-theme 'evenok-dark palette)
+(let-alist evenok-palette-dark
 
   (custom-theme-set-variables 'evenok-dark
     `(frame-background-mode 'dark)
-    `(pdf-view-midnight-colors (cons ,white ,black))))
+    `(pdf-view-midnight-colors (cons ,.white ,.black))))
 
 (provide-theme 'evenok-dark)
 
