@@ -2,9 +2,10 @@
 
 ;; Copyright (C) 2024 Free Software Foundation, Inc.
 
-;; Author:     Mekeor Melire <mekeor@posteo.de>
-;; Homepage:   https://codeberg.org/mekeor/emacs-evenok
-;; Maintainer: Mekeor Melire <mekeor@posteo.de>
+;; Author:                  Mekeor Melire <mekeor@posteo.de>
+;; Homepage:                https://codeberg.org/mekeor/emacs-evenok
+;; Maintainer:              Mekeor Melire <mekeor@posteo.de>
+;; SPDX-License-Identifier: GPL-3.0-or-later
 
 ;; This file is NOT part of GNU Emacs.
 
@@ -22,7 +23,7 @@
 ;; along with this program.  If not, see
 ;; <https://www.gnu.org/licenses/>.
 
-;;;; Code:
+;;; Code:
 
 (deftheme evenok-light-extra)
 

@@ -1,4 +1,4 @@
-;;; evenok-theme.el --- Theme with Perceptively Evenly Distributed Colors  -*- lexical-binding: t; -*-
+;;; evenok.el --- Themes with Perceptively Evenly Distributed Colors  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 Free Software Foundation, Inc.
 
@@ -29,22 +29,13 @@
 
 ;;; Commentary:
 
-;; `evenok' is a package that provides themes with some common radical
-;; features:
-
-;; `evenok' themes use the OKLCH color space in order to evenly
-;; distribute its eight base colors within the color spectrum as it is
-;; perceived by humans.  This also allows to choose colors with equally
-;; perceived lightness.
+;; `evenok' is a package that provides themes using the OKLCH color
+;; space in order to evenly distribute its eight base colors within
+;; the color spectrum as it is perceived by humans.  This also allows
+;; to choose colors with equally perceived lightness.
+;;
 ;; - https://bottosson.github.io/posts/oklab/
 ;; - https://oklch.com
-
-;; `evenok' themes use multiple style sets of the Iosevka font family
-;; that align perfectly with each other.
-;; - https://github.com/be5invis/iosevka
-
-;; `evenok' themes assume that you loaded the `unsp-theme' prior in
-;; order to unspecify all face attributes.
 
 ;;;; Status of Development:
 
@@ -84,8 +75,8 @@
      (black dark dim grey grey-red grey-orange grey-green grey-purple
        grey-magenta faded faded-red faded-orange faded-green
        faded-purple faded-magenta bright bright-red bright-orange
-       bright-yellow bright-green bright-cyan bright-blue bright-purple
-       bright-magenta white)
+       bright-yellow bright-green bright-cyan bright-blue
+       bright-purple bright-magenta white)
      ,palette
      ,@body))
 
@@ -159,31 +150,8 @@
 
 (defun evenok-theme (name palette)
   (evenok-with-palette palette
-
     (let*
-      ;; https://github.com/be5invis/iosevka/blob/main/doc/stylistic-sets.md
-      ( (default    "Iosevka Fixed")
-        (curly      "Iosevka Fixed Curly")
-        (andale     "Iosevka Fixed SS01")
-        (anonymous  "Iosevka Fixed SS02")
-        (consolas   "Iosevka Fixed SS03")
-        (menlo      "Iosevka Fixed SS04")
-        (fira       "Iosevka Fixed SS05")
-        (liberation "Iosevka Fixed SS06")
-        (monaco     "Iosevka Fixed SS07")
-        (pragmata   "Iosevka Fixed SS08")
-        (source     "Iosevka Fixed SS09")
-        (envy       "Iosevka Fixed SS10")
-        (x-window   "Iosevka Fixed SS11")
-        (ubuntu     "Iosevka Fixed SS12")
-        (lucida     "Iosevka Fixed SS13")
-        (jetbrains  "Iosevka Fixed SS14")
-        (plex       "Iosevka Fixed SS15")
-        (pt         "Iosevka Fixed SS16")
-        (recursive  "Iosevka Fixed SS17")
-        (input      "Iosevka Fixed SS18")
-
-        (faces-as-faces
+      ( (faces-as-faces
           (list
             `(avy-goto-char-timer-face                             ((t :background ,white :foreground ,black :weight bold)))
             `(avy-lead-face                                        ((t :background ,white :foreground ,black :weight bold)))
@@ -252,7 +220,7 @@
             `(custom-variable-tag                                  ((t :foreground ,bright-yellow)))
             `(custom-visibility                                    ((t :underline t)))
             `(debbugs-gnu-title                                    ((t :foreground ,white)))
-            `(default                                              ((t :background ,black :family ,default :foreground ,bright)))
+            `(default                                              ((t :background ,black :foreground ,bright)))
             `(devdocs-code-block                                   ((t :background ,dark)))
             `(diary-button                                         ((t :underline t)))
             `(dictionary-button-face                               ((t :underline t)))
@@ -367,18 +335,18 @@
             `(font-latex-math-face                                 ((t :background ,black)))
             `(font-lock-builtin-face                               ((t :foreground ,bright-cyan)))
             `(font-lock-comment-delimiter-face                     ((t :foreground ,faded :weight normal)))
-            `(font-lock-comment-face                               ((t :family ,recursive :foreground ,faded :weight normal)))
+            `(font-lock-comment-face                               ((t :foreground ,faded :weight normal)))
             `(font-lock-constant-face                              ((t :foreground ,bright-orange)))
-            `(font-lock-doc-face                                   ((t :family ,pt :foreground ,faded)))
+            `(font-lock-doc-face                                   ((t :foreground ,faded)))
             `(font-lock-function-name-face                         ((t :foreground ,bright-blue)))
             `(font-lock-keyword-face                               ((t :foreground ,bright-magenta)))
             `(font-lock-negation-char-face                         ((t :foreground ,bright-red)))
-            `(font-lock-number-face                                ((t :family ,pragmata)))
+            `(font-lock-number-face                                ((t :foreground ,bright-purple)))
             `(font-lock-preprocessor-face                          ((t :foreground ,bright-blue)))
             `(font-lock-regexp-face                                ((t :foreground ,bright-blue)))
             `(font-lock-regexp-grouping-backslash                  ((t :foreground ,bright-yellow)))
             `(font-lock-regexp-grouping-construct                  ((t :foreground ,bright-magenta)))
-            `(font-lock-string-face                                ((t :family ,plex :foreground ,bright-green)))
+            `(font-lock-string-face                                ((t :foreground ,bright-green)))
             `(font-lock-type-face                                  ((t :foreground ,bright-yellow)))
             `(font-lock-variable-name-face                         ((t :foreground ,bright-red)))
             `(font-lock-warning-face                               ((t :foreground ,bright-red)))
@@ -707,7 +675,7 @@
             `(term-color-red                                       ((t :foreground ,bright-red)))
             `(term-color-white                                     ((t :foreground ,white)))
             `(term-color-yellow                                    ((t :foreground ,bright-yellow)))
-            `(tooltip                                              ((t :background ,dark :family ,curly :foreground ,bright)))
+            `(tooltip                                              ((t :background ,dark :foreground ,bright)))
             `(trailing-whitespace                                  ((t :underline (:color ,grey-orange :style wave :position nil))))
             `(transient-argument                                   ((t :foreground ,bright-yellow)))
             `(transient-blue                                       ((t :foreground ,bright-blue)))
@@ -791,7 +759,8 @@
           (pcase-lambda (`(,sy ,sp))
             (list
               (intern
-                (concat (symbol-name name) "-" (symbol-name sy))) sp t))
+                (concat (symbol-name name) "-" (symbol-name sy)))
+              sp t))
           faces-as-variables))
 
       (custom-theme-set-variables name
