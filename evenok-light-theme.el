@@ -28,16 +28,16 @@
 
 (require 'evenok)
 
-(evenok-theme 'evenok-light palette)
+(evenok-theme 'evenok-light evenok-palette-light)
 
-(let-alist evenok-palette-light
+(evenok-with-palette evenok-palette-light
 
   (custom-theme-set-faces 'evenok-light
     '(default ((t :weight demibold))))
 
   (custom-theme-set-variables 'evenok-light
     `(frame-background-mode 'light)
-    `(pdf-view-midnight-colors (cons ,.black ,.white))))
+    `(pdf-view-midnight-colors (cons ,black ,white))))
 
 (provide-theme 'evenok-light)
 

@@ -1,4 +1,4 @@
-;;; evenok-dark-theme.el -*- lexical-binding: t; -*-
+;;; evenok-dark-extra-theme.el -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 Free Software Foundation, Inc.
 
@@ -24,18 +24,12 @@
 
 ;;;; Code:
 
-(deftheme evenok-dark)
+(deftheme evenok-dark-extra)
 
-(require 'evenok)
+(require 'evenok-extra)
 
-(evenok-theme 'evenok-dark evenok-palette-dark)
+(evenok-extra-theme 'evenok-dark-extra evenok-palette-dark)
 
-(evenok-with-palette evenok-palette-dark
+(provide-theme 'evenok-dark-extra)
 
-  (custom-theme-set-variables 'evenok-dark
-    `(frame-background-mode 'dark)
-    `(pdf-view-midnight-colors (cons ,white ,black))))
-
-(provide-theme 'evenok-dark)
-
-;;; evenok-dark-theme.el ends here
+;;; evenok-dark-extra-theme.el ends here
