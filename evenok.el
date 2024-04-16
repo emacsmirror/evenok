@@ -72,7 +72,7 @@
 
 ;;; Code:
 
-(defun evenok-theme (name &rest palette)
+(defun evenok-theme (name palette)
   (map-let
     (black dark dim grey grey-red grey-orange grey-green grey-purple
       grey-magenta faded faded-red faded-orange faded-green
@@ -730,19 +730,17 @@
       (custom-theme-set-variables name
         `(ansi-color-faces-vector [default bold shadow italic underline success warning error])
         `(ansi-color-names-vector [,grey ,bright-red ,bright-green ,bright-yellow ,bright-blue ,bright-magenta ,bright-cyan ,bright])
-        `(erc-log-match-format
-           (concat
-             (propertize "%t" 'face (list :foreground ,faded)) " "
-             (propertize "%c" 'face (list :foreground ,bright-blue)) " "
-             (propertize "%n" 'face (list :foreground ,bright-yellow)) ": "
-             (propertize "%m"
-               'wrap-prefix (list 'space :width 4)
-               'line-prefix (list 'space :width 4))))
-        ;; `(frame-background-mode 'dark) ;; TODO
+        ;; TODO: this is too opinionated for the normal themes:
+        ;; `(erc-log-match-format
+        ;;    (concat
+        ;;      (propertize "%t" 'face (list :foreground ,faded)) " "
+        ;;      (propertize "%c" 'face (list :foreground ,bright-blue)) " "
+        ;;      (propertize "%n" 'face (list :foreground ,bright-yellow)) ": "
+        ;;      (propertize "%m"
+        ;;        'wrap-prefix (list 'space :width 4)
+        ;;        'line-prefix (list 'space :width 4))))
         `(highlight-parentheses-colors nil)
-        `(ibuffer-fontification-alist nil)
-        ;; TODO: midnight should always be white on black.
-        `(pdf-view-midnight-colors (cons ,white ,black)))
+        `(ibuffer-fontification-alist nil))
 
       ;; (defface evenok-flymake-error-bitmap nil nil :group 'flymake :group 'evenok)
       ;; (custom-theme-set-variables 'evenok
