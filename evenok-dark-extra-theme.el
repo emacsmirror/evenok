@@ -25,7 +25,10 @@
 
 ;;; Code:
 
-(deftheme evenok-dark-extra)
+(deftheme evenok-dark-extra
+  :family 'evenok-extra
+  :kind 'color-scheme
+  :background-mode 'dark)
 
 (require 'evenok-extra)
 

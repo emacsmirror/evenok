@@ -25,7 +25,10 @@
 
 ;;; Code:
 
-(deftheme evenok-light)
+(deftheme evenok-light
+  :family 'evenok
+  :kind 'color-scheme
+  :background-mode 'light)
 
 (require 'evenok)
 
