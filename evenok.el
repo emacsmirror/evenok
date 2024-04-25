@@ -223,7 +223,7 @@
             `(custom-visibility                                    ((t :underline t)))
             `(debbugs-gnu-title                                    ((t :foreground ,white)))
             `(default                                              ((t :background ,black :foreground ,bright)))
-            `(devdocs-code-block                                   ((t :background ,dark)))
+            `(devdocs-code-block                                   ((t :background ,dark :extend t)))
             `(diary-button                                         ((t :underline t)))
             `(dictionary-button-face                               ((t :underline t)))
             `(dictionary-reference-face                            ((t :underline t)))
