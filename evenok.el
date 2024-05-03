@@ -544,6 +544,7 @@
             `(markdown-url-face                                    ((t :underline t)))
             `(match                                                ((t :inverse-video t :weight bold)))
             `(mc/cursor-face                                       ((t :background ,white)))
+            `(mc/region-face                                       ((t :background ,grey)))
             `(message-header-name                                  ((t :foreground ,bright-yellow)))
             `(message-header-subject                               ((t :foreground ,white :weight bold)))
             `(message-mml                                          ((t :foreground ,faded-magenta :slant italic)))
