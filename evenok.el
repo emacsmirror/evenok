@@ -694,6 +694,7 @@
             `(term-color-red                                       ((t :foreground ,bright-red)))
             `(term-color-white                                     ((t :foreground ,white)))
             `(term-color-yellow                                    ((t :foreground ,bright-yellow)))
+            `(tex-math                                             ((t :foreground ,bright-cyan)))
             `(tooltip                                              ((t :background ,dark :foreground ,bright)))
             `(trailing-whitespace                                  ((t :underline (:color ,grey-orange :style wave :position nil))))
             `(transient-argument                                   ((t :foreground ,bright-yellow)))
