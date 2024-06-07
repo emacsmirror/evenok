@@ -492,6 +492,7 @@
             `(magit-log-author                                     ((t :foreground ,faded)))
             `(magit-log-date                                       ((t :foreground ,faded)))
             `(magit-mode-line-process-error                        ((t :foreground ,bright-red)))
+            `(magit-refname                                        ((t :foreground ,bright-magenta)))
             `(magit-section-heading                                ((t :foreground ,bright-yellow)))
             `(magit-section-heading-selection                      ((t :background ,grey :foreground ,bright-orange)))
             `(magit-section-highlight                              ((t :background ,dark)))
