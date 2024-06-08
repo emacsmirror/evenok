@@ -45,6 +45,10 @@ applied.  The result will be put in place of `%uE' within
 
 (defface evenok-extra-gnus-summary-dummy nil nil)
 
+;; For the following definition, `package-lint' will report `error:
+;; "gnus-user-format-function-E" doesn't start with package's prefix
+;; "evenok-extra"'.  But `gnus' relies on this function to be named
+;; like this.  So there's nothing we can do about this.
 (defun gnus-user-format-function-E (header)
   (propertize
     (concat
