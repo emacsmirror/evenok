@@ -9,7 +9,7 @@
 ;; Maintainer:              Mekeor Melire <mekeor@posteo.de>
 ;; Package-Requires:        ((emacs "28.1"))
 ;; SPDX-License-Identifier: GPL-3.0-or-later
-;; Version:                 0.8
+;; Version:                 0.8.1
 
 ;; This file is NOT part of GNU Emacs.
 
