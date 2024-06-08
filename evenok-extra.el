@@ -1,4 +1,4 @@
-;;; evenok-extra.el -*- lexical-binding: t; -*-
+;;; evenok-extra.el --- Opinionated Extras to Evenok Themes -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 Free Software Foundation, Inc.
 
@@ -23,6 +23,11 @@
 ;; along with this program.  If not, see
 ;; <https://www.gnu.org/licenses/>.
 
+;;; Commentary:
+
+;; This feature provides a framework for defining opinionated
+;; extra-themes to be used on top of to (regular) evenok themes.
+
 ;;; Code:
 
 (require 'evenok)
@@ -38,10 +43,10 @@
 
 (defcustom evenok-extra-gnus-summary-dummy-line-format
   "                                           ╤ "
-  "String to which `evenok-extra-gnus-summary-dummy' face will be
-applied.  The result will be put in place of `%uE' within
-`gnus-summary-dummy-line-format'."
-  :type 'string)
+  "String to which `evenok-extra-gnus-summary-dummy' face will be applied.
+
+The result will be put in place of `%uE' within
+`gnus-summary-dummy-line-format'."   :type 'string)
 
 (defface evenok-extra-gnus-summary-dummy nil nil)
 
@@ -50,6 +55,9 @@ applied.  The result will be put in place of `%uE' within
 ;; "evenok-extra"'.  But `gnus' relies on this function to be named
 ;; like this.  So there's nothing we can do about this.
 (defun gnus-user-format-function-E (header)
+  "Dummy faced `evenok-extra-gnus-summary-dummy-line-format' and subject.
+
+Argument HEADER is a Gnus message header."
   (propertize
     (concat
       evenok-extra-gnus-summary-dummy-line-format
@@ -69,6 +77,7 @@ applied.  The result will be put in place of `%uE' within
 (defface evenok-extra-org-prgs nil nil)
 
 (defun evenok-extra-theme (name palette)
+  "Set variables and faces of theme NAME using colors from PALETTE."
   (evenok-with-palette palette
 
     (custom-theme-set-variables name

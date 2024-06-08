@@ -1,4 +1,4 @@
-;;; evenok.el --- Themes with Perceptively Evenly Distributed Colors  -*- lexical-binding: t; -*-
+;;; evenok.el --- Themes with Perceptively Evenly Distributed Colors -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 Free Software Foundation, Inc.
 
@@ -73,6 +73,7 @@
   :prefix "evenok-")
 
 (defmacro evenok-with-palette (palette &rest body)
+  "Use variables referring to colors from PALETTE in BODY."
   `(seq-let
      (black dark dim grey grey-red grey-orange grey-green grey-purple
        grey-magenta faded faded-red faded-orange faded-green
@@ -151,6 +152,7 @@
      "#000000"))
 
 (defun evenok-theme (name palette)
+  "Set variables and faces of theme named NAME with colors from PALETTE."
   (evenok-with-palette palette
     (let*
       ( (faces-as-faces

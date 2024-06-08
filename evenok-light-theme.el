@@ -1,4 +1,4 @@
-;;; evenok-light-theme.el -*- lexical-binding: t; -*-
+;;; evenok-light-theme.el --- Light Theme with Perceptively Evenly Distributed Colors -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 Free Software Foundation, Inc.
 
@@ -22,6 +22,11 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see
 ;; <https://www.gnu.org/licenses/>.
+
+;;; Commentary:
+
+;; This feature provides a light theme with perceptively evenly
+;; distributed colors.
 
 ;;; Code:
 

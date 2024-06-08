@@ -1,4 +1,4 @@
-;;; evenok-dark-extra-theme.el -*- lexical-binding: t; -*-
+;;; evenok-dark-extra-theme.el --- Opinionated extras to evenok-dark-theme -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 Free Software Foundation, Inc.
 
@@ -22,6 +22,11 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see
 ;; <https://www.gnu.org/licenses/>.
+
+;;; Commentary:
+
+;; This feature provides a theme to be used on top of
+;; `evenok-dark-theme' that is very opinionated.
 
 ;;; Code:
 
