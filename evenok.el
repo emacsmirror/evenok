@@ -37,18 +37,30 @@
 ;; - https://bottosson.github.io/posts/oklab/
 ;; - https://oklch.com
 
-;;;; Status of Development:
+;;;; Installation:
 
-;; `evenok' is in EXPERIMENTAL stage and currently contains many
-;; personal settings from its author and maintainer.
+;; Clone the Git repository to your local persistent memory and put
+;; its file-path to `load-path'.
 
-;;;; TODO:
+;;;; Usage:
 
-;; - Remove personal settings? Re-introduce deffaces? Use
-;;   `custom-declare-face' instead of a composition of `eval' and
-;;   `defface'.
-;; - Add Usage section to Commentary.
-;; - Add Dependencies section to Commentary.
+;; These themes are meant to be used on top of the `unsp-theme'.  You
+;; can load them together like this:
+
+;;   (mapcar #'load-theme
+;;       '(unsp
+;;         evenok-dark
+;;         ;; evenok-dark-extra ;; optional, very opinionated
+;;         ))
+
+;;;; Demo:
+
+;; A video demonstration of appearance and usage of the
+;; `evenok-dark-theme' can be found here:
+;; https://iv.catgirl.cloud/watch?v=_18ICdAmlTg
+
+;;;; Roadmap:
+
 ;; - Update screenshots; add one for light variant.
 ;; - Use common colors for `eshell-ls-*' and `dired-*'.
 
