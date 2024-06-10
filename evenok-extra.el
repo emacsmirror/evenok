@@ -30,6 +30,8 @@
 
 ;;; Code:
 
+(require 'nnheader)
+
 (require 'evenok)
 
 (defgroup evenok-extra nil
