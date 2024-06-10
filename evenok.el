@@ -1,10 +1,10 @@
-;;; evenok.el --- Themes with Perceptively Evenly Distributed Colors -*- lexical-binding: t; -*-
+;;; evenok.el --- Themes with perceptively evenly distributed colors  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 Free Software Foundation, Inc.
 
 ;; Author:                  Mekeor Melire <mekeor@posteo.de>
 ;; Created:                 2024
-;; Homepage:                https://codeberg.org/mekeor/emacs-evenok
+;; Homepage:                https://codeberg.org/mekeor/evenok-themes
 ;; Keywords:                faces, theme
 ;; Maintainer:              Mekeor Melire <mekeor@posteo.de>
 ;; Package-Requires:        ((emacs "28.1"))
@@ -44,11 +44,13 @@
 
 ;;;; Usage:
 
-;; These themes are meant to be used on top of the `unsp-theme'.  You
-;; can load them together like this:
-
+;; These themes are meant to be used on top of the
+;; `unspecified-theme': https://codeberg.org/mekeor/unspecified-theme
+;;
+;; You can load them together like this:
+;;
 ;;   (mapcar #'load-theme
-;;       '(unsp
+;;       '(unspecified
 ;;         evenok-dark
 ;;         ;; evenok-dark-extra ;; optional, very opinionated
 ;;         ))
@@ -80,7 +82,7 @@
   :group 'faces
   :link '(url-link
            :tag "Homepage"
-           "https://codeberg.org/mekeor/emacs-evenok")
+           "https://codeberg.org/mekeor/evenok-themes")
   :link '(emacs-library-link :tag "Library Source" "evenok.el")
   :prefix "evenok-")
 

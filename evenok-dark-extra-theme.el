@@ -1,9 +1,9 @@
-;;; evenok-dark-extra-theme.el --- Opinionated extras to evenok-dark-theme -*- lexical-binding: t; -*-
+;;; evenok-dark-extra-theme.el --- Opinionated extras to evenok-dark-theme  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 Free Software Foundation, Inc.
 
 ;; Author:                  Mekeor Melire <mekeor@posteo.de>
-;; Homepage:                https://codeberg.org/mekeor/emacs-evenok
+;; Homepage:                https://codeberg.org/mekeor/evenok-themes
 ;; Maintainer:              Mekeor Melire <mekeor@posteo.de>
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 

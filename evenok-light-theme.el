@@ -1,9 +1,9 @@
-;;; evenok-light-theme.el --- Light Theme with Perceptively Evenly Distributed Colors -*- lexical-binding: t; -*-
+;;; evenok-light-theme.el --- Light theme with perceptively evenly distributed colors  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 Free Software Foundation, Inc.
 
 ;; Author:                  Mekeor Melire <mekeor@posteo.de>
-;; Homepage:                https://codeberg.org/mekeor/emacs-evenok
+;; Homepage:                https://codeberg.org/mekeor/evenok-themes
 ;; Maintainer:              Mekeor Melire <mekeor@posteo.de>
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 
