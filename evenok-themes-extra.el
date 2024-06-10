@@ -30,6 +30,8 @@
 
 ;;; Code:
 
+(require 'nnheader)
+
 (require 'evenok-themes)
 
 (defgroup evenok-extra nil
