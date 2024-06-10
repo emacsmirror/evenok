@@ -753,7 +753,7 @@
           (list
             `(gnus-face-0                    ((t :foreground ,white)))
             `(gnus-face-4                    ((t :foreground ,faded :slant italic)))
-            `(goto-address-url-face          ((t :underline t)))
+            '(goto-address-url-face          ((t :underline t)))
             `(grep-context-face              ((t :background ,dark)))
             `(grep-error-face                ((t :foreground ,bright-red)))
             `(grep-hit-face                  ((t :foreground ,bright-yellow)))
@@ -800,14 +800,14 @@
           faces-as-variables))
 
       (custom-theme-set-variables name
-        `(ansi-color-faces-vector
+        '(ansi-color-faces-vector
            [ default bold shadow italic underline success warning
              error])
         `(ansi-color-names-vector
            [,grey ,bright-red ,bright-green ,bright-yellow
              ,bright-blue ,bright-magenta ,bright-cyan ,bright])
-        `(highlight-parentheses-colors nil)
-        `(ibuffer-fontification-alist nil)))))
+        '(highlight-parentheses-colors nil)
+        '(ibuffer-fontification-alist nil)))))
 
 ;;;###autoload
 (when load-file-name
