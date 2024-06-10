@@ -45,7 +45,7 @@
     '(default ((t :weight demibold))))
 
   (custom-theme-set-variables 'evenok-light
-    `(frame-background-mode 'light)
+    '(frame-background-mode 'light)
     `(pdf-view-midnight-colors (cons ,black ,white))))
 
 (provide-theme 'evenok-light)
