@@ -1,4 +1,4 @@
-;;; evenok-extra.el --- Opinionated extras to evenok themes  -*- lexical-binding: t; -*-
+;;; evenok-themes-extra.el --- Opinionated extras to evenok themes  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 Free Software Foundation, Inc.
 
@@ -30,7 +30,7 @@
 
 ;;; Code:
 
-(require 'evenok)
+(require 'evenok-themes)
 
 (defgroup evenok-extra nil
   "Opinionated extras to `evenok'."
@@ -136,6 +136,6 @@ Argument HEADER is a Gnus message header."
       `(evenok-extra-org-pndg               ((t :foreground ,bright-orange)))
       `(evenok-extra-org-prgs               ((t :foreground ,bright-purple))))))
 
-(provide 'evenok-extra)
+(provide 'evenok-themes-extra)
 
-;;; evenok-extra.el ends here
+;;; evenok-themes-extra.el ends here

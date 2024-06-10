@@ -1,4 +1,4 @@
-;;; evenok.el --- Themes with perceptively evenly distributed colors  -*- lexical-binding: t; -*-
+;;; evenok-themes.el --- Themes with perceptively evenly distributed colors  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 Free Software Foundation, Inc.
 
@@ -29,10 +29,10 @@
 
 ;;; Commentary:
 
-;; `evenok' is a package that provides themes using the OKLCH color
-;; space in order to evenly distribute its eight base colors within
-;; the color spectrum as it is perceived by humans.  This also allows
-;; to choose colors with equally perceived lightness.
+;; `evenok-themes' is a package that provides themes using the OKLCH
+;; color space in order to evenly distribute its eight base colors
+;; within the color spectrum as it is perceived by humans.  This also
+;; allows to choose colors with equally perceived lightness.
 ;;
 ;; - https://bottosson.github.io/posts/oklab/
 ;; - https://oklch.com
@@ -815,6 +815,6 @@
   (add-to-list 'custom-theme-load-path
     (file-name-directory load-file-name)))
 
-(provide 'evenok)
+(provide 'evenok-themes)
 
-;;; evenok.el ends here
+;;; evenok-themes.el ends here

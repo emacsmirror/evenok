@@ -35,7 +35,7 @@
   :kind 'color-scheme
   :background-mode 'dark)
 
-(require 'evenok-extra)
+(require 'evenok-themes-extra)
 
 (evenok-extra-theme 'evenok-dark-extra evenok-palette-dark)
 
