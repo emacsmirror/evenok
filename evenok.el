@@ -271,6 +271,7 @@
             `(diff-removed                                         ((t :background ,grey-red)))
             `(dired-broken-symlink                                 ((t :foreground ,bright-red)))
             `(dired-directory                                      ((t :foreground ,bright-blue)))
+            `(dired-flagged                                        ((t :foreground ,bright-orange)))
             `(dired-header                                         ((t :foreground ,white :weight bold)))
             `(dired-mark                                           ((t :foreground ,bright-orange)))
             `(dired-marked                                         ((t :foreground ,bright-orange)))
