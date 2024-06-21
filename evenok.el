@@ -1,15 +1,15 @@
-;;; evenok.el --- Themes with Perceptively Evenly Distributed Colors  -*- lexical-binding: t; -*-
+;;; evenok.el --- Themes with perceptively evenly distributed colors  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 Free Software Foundation, Inc.
 
 ;; Author:                  Mekeor Melire <mekeor@posteo.de>
 ;; Created:                 2024
-;; Homepage:                https://codeberg.org/mekeor/emacs-evenok
+;; Homepage:                https://codeberg.org/mekeor/evenok
 ;; Keywords:                faces, theme
 ;; Maintainer:              Mekeor Melire <mekeor@posteo.de>
 ;; Package-Requires:        ((emacs "28.1"))
 ;; SPDX-License-Identifier: GPL-3.0-or-later
-;; Version:                 0.8
+;; Version:                 0.11.1
 
 ;; This file is NOT part of GNU Emacs.
 
@@ -37,18 +37,32 @@
 ;; - https://bottosson.github.io/posts/oklab/
 ;; - https://oklch.com
 
-;;;; Status of Development:
+;;;; Installation:
 
-;; `evenok' is in EXPERIMENTAL stage and currently contains many
-;; personal settings from its author and maintainer.
+;; Clone the Git repository to your local persistent memory and put
+;; its file-path to `load-path'.
 
-;;;; TODO:
+;;;; Usage:
 
-;; - Remove personal settings? Re-introduce deffaces? Use
-;;   `custom-declare-face' instead of a composition of `eval' and
-;;   `defface'.
-;; - Add Usage section to Commentary.
-;; - Add Dependencies section to Commentary.
+;; These themes are meant to be used on top of the
+;; `unspecified-theme': https://codeberg.org/mekeor/unspecified-theme
+;;
+;; You can load them together like this:
+;;
+;;   (mapcar #'load-theme
+;;       '(unspecified
+;;         evenok-dark
+;;         ;; evenok-dark-extra ;; optional, very opinionated
+;;         ))
+
+;;;; Demo:
+
+;; A video demonstration of appearance and usage of the
+;; `evenok-dark-theme' can be found here:
+;; https://iv.catgirl.cloud/watch?v=_18ICdAmlTg
+
+;;;; Roadmap:
+
 ;; - Update screenshots; add one for light variant.
 ;; - Use common colors for `eshell-ls-*' and `dired-*'.
 
@@ -68,11 +82,12 @@
   :group 'faces
   :link '(url-link
            :tag "Homepage"
-           "https://codeberg.org/mekeor/emacs-evenok")
+           "https://codeberg.org/mekeor/evenok-themes")
   :link '(emacs-library-link :tag "Library Source" "evenok.el")
   :prefix "evenok-")
 
 (defmacro evenok-with-palette (palette &rest body)
+  "Use variables referring to colors from PALETTE in BODY."
   `(seq-let
      (black dark dim grey grey-red grey-orange grey-green grey-purple
        grey-magenta faded faded-red faded-orange faded-green
@@ -151,6 +166,7 @@
      "#000000"))
 
 (defun evenok-theme (name palette)
+  "Set variables and faces of theme named NAME with colors from PALETTE."
   (evenok-with-palette palette
     (let*
       ( (faces-as-faces
@@ -255,6 +271,7 @@
             `(diff-removed                                         ((t :background ,grey-red)))
             `(dired-broken-symlink                                 ((t :foreground ,bright-red)))
             `(dired-directory                                      ((t :foreground ,bright-blue)))
+            `(dired-flagged                                        ((t :foreground ,bright-orange)))
             `(dired-header                                         ((t :foreground ,white :weight bold)))
             `(dired-mark                                           ((t :foreground ,bright-orange)))
             `(dired-marked                                         ((t :foreground ,bright-orange)))
@@ -284,6 +301,21 @@
             `(eglot-inlay-hint-face                                ((t :foreground ,grey :weight light)))
             `(eglot-type-hint-face                                 ((t :foreground ,grey :weight light)))
             `(eldoc-highlight-function-argument                    ((t :inverse-video nil :weight bold)))
+            `(elpaca-busy                                          ((t :foreground ,bright-purple)))
+            `(elpaca-failed                                        ((t :foreground ,bright-red)))
+            `(elpaca-blocked                                       ((t :foreground ,bright-orange)))
+            `(elpaca-finished                                      ((t :foreground ,bright-green)))
+            `(elpaca-log-info                                      ((t :foreground ,bright-yellow)))
+            `(elpaca-log-error                                     ((t :foreground ,bright-red)))
+            `(elpaca-info-package                                  ((t :foreground ,white)))
+            `(elpaca-log-highlight                                 ((t :foreground ,bright-yellow)))
+            `(elpaca-ui-conflicting                                ((t :foreground ,bright-red :weight bold)))
+            `(elpaca-ui-marked-pull                                ((t :foreground ,bright-yellow :weight bold)))
+            `(elpaca-ui-marked-fetch                               ((t :foreground ,bright-blue :weight bold)))
+            `(elpaca-ui-marked-merge                               ((t :foreground ,bright-purple :weight bold)))
+            `(elpaca-ui-marked-delete                              ((t :foreground ,bright-red :weight bold)))
+            `(elpaca-ui-marked-install                             ((t :foreground ,bright-cyan :weight bold)))
+            `(elpaca-ui-marked-rebuild                             ((t :foreground ,bright-magenta :weight bold)))
             `(embark-collect-group-separator                       ((t :foreground ,bright-yellow)))
             `(embark-collect-group-title                           ((t :foreground ,white)))
             `(embark-keybinding                                    ((t :foreground ,bright-yellow)))
@@ -322,6 +354,7 @@
             `(eshell-syntax-highlighting-string-face               ((t :foreground ,bright-green)))
             `(file-name-shadow                                     ((t :foreground ,faded)))
             `(fill-column-indicator                                ((t :foreground ,dim)))
+            `(flycheck-verify-select-checker                       ((t :underline t)))
             `(flymake-end-of-line-diagnostics-face                 ((t :foreground ,grey-red :slant italic :weight light)))
             `(flymake-error                                        ((t :underline (:color ,bright-red :style wave :position nil))))
             `(flymake-error-echo                                   ((t :foreground ,bright-red)))
@@ -476,6 +509,7 @@
             `(magit-log-author                                     ((t :foreground ,faded)))
             `(magit-log-date                                       ((t :foreground ,faded)))
             `(magit-mode-line-process-error                        ((t :foreground ,bright-red)))
+            `(magit-refname                                        ((t :foreground ,bright-magenta)))
             `(magit-section-heading                                ((t :foreground ,bright-yellow)))
             `(magit-section-heading-selection                      ((t :background ,grey :foreground ,bright-orange)))
             `(magit-section-highlight                              ((t :background ,dark)))
@@ -678,6 +712,7 @@
             `(term-color-red                                       ((t :foreground ,bright-red)))
             `(term-color-white                                     ((t :foreground ,white)))
             `(term-color-yellow                                    ((t :foreground ,bright-yellow)))
+            `(tex-math                                             ((t :foreground ,bright-cyan)))
             `(tooltip                                              ((t :background ,dark :foreground ,bright)))
             `(trailing-whitespace                                  ((t :underline (:color ,grey-orange :style wave :position nil))))
             `(transient-argument                                   ((t :foreground ,bright-yellow)))
@@ -687,6 +722,10 @@
             `(transient-inactive-argument                          ((t :foreground ,faded)))
             `(transient-inactive-value                             ((t :foreground ,faded)))
             `(transient-key                                        ((t :foreground ,white)))
+            `(transient-key-exit                                   ((t :foreground ,white)))
+            `(transient-key-noop                                   ((t :foreground ,white)))
+            `(transient-key-return                                 ((t :foreground ,white)))
+            `(transient-key-stay                                   ((t :foreground ,white)))
             `(transient-mismatched-key                             ((t :foreground ,bright-red)))
             `(transient-pink                                       ((t :foreground ,bright-magenta)))
             `(transient-purple                                     ((t :foreground ,bright-purple)))
@@ -720,7 +759,7 @@
           (list
             `(gnus-face-0                    ((t :foreground ,white)))
             `(gnus-face-4                    ((t :foreground ,faded :slant italic)))
-            `(goto-address-url-face          ((t :underline t)))
+            '(goto-address-url-face          ((t :underline t)))
             `(grep-context-face              ((t :background ,dark)))
             `(grep-error-face                ((t :foreground ,bright-red)))
             `(grep-hit-face                  ((t :foreground ,bright-yellow)))
@@ -767,14 +806,14 @@
           faces-as-variables))
 
       (custom-theme-set-variables name
-        `(ansi-color-faces-vector
+        '(ansi-color-faces-vector
            [ default bold shadow italic underline success warning
              error])
         `(ansi-color-names-vector
            [,grey ,bright-red ,bright-green ,bright-yellow
              ,bright-blue ,bright-magenta ,bright-cyan ,bright])
-        `(highlight-parentheses-colors nil)
-        `(ibuffer-fontification-alist nil)))))
+        '(highlight-parentheses-colors nil)
+        '(ibuffer-fontification-alist nil)))))
 
 ;;;###autoload
 (when load-file-name

@@ -1,9 +1,9 @@
-;;; evenok-light-extra-theme.el -*- lexical-binding: t; -*-
+;;; evenok-light-extra-theme.el --- Opinionated extras to evenok-light-theme  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 Free Software Foundation, Inc.
 
 ;; Author:                  Mekeor Melire <mekeor@posteo.de>
-;; Homepage:                https://codeberg.org/mekeor/emacs-evenok
+;; Homepage:                https://codeberg.org/mekeor/evenok-themes
 ;; Maintainer:              Mekeor Melire <mekeor@posteo.de>
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -22,6 +22,11 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see
 ;; <https://www.gnu.org/licenses/>.
+
+;;; Commentary:
+
+;; This feature provides a theme to be used on top of
+;; `evenok-light-theme' that is very opinionated.
 
 ;;; Code:
 

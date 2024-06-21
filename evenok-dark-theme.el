@@ -1,9 +1,9 @@
-;;; evenok-dark-theme.el -*- lexical-binding: t; -*-
+;;; evenok-dark-theme.el --- Dark theme with perceptively evenly distributed colors  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 Free Software Foundation, Inc.
 
 ;; Author:                  Mekeor Melire <mekeor@posteo.de>
-;; Homepage:                https://codeberg.org/mekeor/emacs-evenok
+;; Homepage:                https://codeberg.org/mekeor/evenok-themes
 ;; Maintainer:              Mekeor Melire <mekeor@posteo.de>
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -23,6 +23,11 @@
 ;; along with this program.  If not, see
 ;; <https://www.gnu.org/licenses/>.
 
+;;; Commentary:
+
+;; This feature provides a dark theme with perceptively evenly
+;; distributed colors.
+
 ;;; Code:
 
 (deftheme evenok-dark
@@ -35,7 +40,6 @@
 (evenok-theme 'evenok-dark evenok-palette-dark)
 
 (evenok-with-palette evenok-palette-dark
-
   (custom-theme-set-variables 'evenok-dark
     `(frame-background-mode 'dark)
     `(pdf-view-midnight-colors (cons ,white ,black))))

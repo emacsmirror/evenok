@@ -1,9 +1,9 @@
-;;; evenok-extra.el -*- lexical-binding: t; -*-
+;;; evenok-extra.el --- Opinionated extras to evenok themes  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 Free Software Foundation, Inc.
 
 ;; Author:                  Mekeor Melire <mekeor@posteo.de>
-;; Homepage:                https://codeberg.org/mekeor/emacs-evenok
+;; Homepage:                https://codeberg.org/mekeor/evenok-themes
 ;; Maintainer:              Mekeor Melire <mekeor@posteo.de>
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -23,7 +23,14 @@
 ;; along with this program.  If not, see
 ;; <https://www.gnu.org/licenses/>.
 
+;;; Commentary:
+
+;; This feature provides a framework for defining opinionated
+;; extra-themes to be used on top of to (regular) evenok themes.
+
 ;;; Code:
+
+(require 'nnheader)
 
 (require 'evenok)
 
@@ -38,14 +45,21 @@
 
 (defcustom evenok-extra-gnus-summary-dummy-line-format
   "                                           ╤ "
-  "String to which `evenok-extra-gnus-summary-dummy' face will be
-applied.  The result will be put in place of `%uE' within
-`gnus-summary-dummy-line-format'."
-  :type 'string)
+  "String to which `evenok-extra-gnus-summary-dummy' face will be applied.
+
+The result will be put in place of `%uE' within
+`gnus-summary-dummy-line-format'."   :type 'string)
 
 (defface evenok-extra-gnus-summary-dummy nil nil)
 
+;; For the following definition, `package-lint' will report `error:
+;; "gnus-user-format-function-E" doesn't start with package's prefix
+;; "evenok-extra"'.  But `gnus' relies on this function to be named
+;; like this.  So there's nothing we can do about this.
 (defun gnus-user-format-function-E (header)
+  "Dummy faced `evenok-extra-gnus-summary-dummy-line-format' and subject.
+
+Argument HEADER is a Gnus message header."
   (propertize
     (concat
       evenok-extra-gnus-summary-dummy-line-format
@@ -65,6 +79,7 @@ applied.  The result will be put in place of `%uE' within
 (defface evenok-extra-org-prgs nil nil)
 
 (defun evenok-extra-theme (name palette)
+  "Set variables and faces of theme NAME using colors from PALETTE."
   (evenok-with-palette palette
 
     (custom-theme-set-variables name
