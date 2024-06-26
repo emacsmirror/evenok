@@ -66,6 +66,15 @@ Argument HEADER is a Gnus message header."
       (mail-header-subject header))
     'face 'evenok-extra-gnus-summary-dummy))
 
+(defface evenok-extra-hi-lock-1 nil nil)
+(defface evenok-extra-hi-lock-2 nil nil)
+(defface evenok-extra-hi-lock-3 nil nil)
+(defface evenok-extra-hi-lock-4 nil nil)
+(defface evenok-extra-hi-lock-5 nil nil)
+(defface evenok-extra-hi-lock-6 nil nil)
+(defface evenok-extra-hi-lock-7 nil nil)
+(defface evenok-extra-hi-lock-8 nil nil)
+
 (defface evenok-extra-hl-todo-fixme nil nil)
 (defface evenok-extra-hl-todo-info nil nil)
 (defface evenok-extra-hl-todo-pndg nil nil)
@@ -103,6 +112,15 @@ Argument HEADER is a Gnus message header."
          (list 'question-mark 'evenok-extra-flymake-warning-bitmap))
       '(flymake-note-bitmap
          (list 'question-mark 'evenok-extra-flymake-note-bitmap))
+      '(hi-lock-face-defaults
+        '("evenok-extra-hi-lock-1"
+          "evenok-extra-hi-lock-2"
+          "evenok-extra-hi-lock-3"
+          "evenok-extra-hi-lock-4"
+          "evenok-extra-hi-lock-5"
+          "evenok-extra-hi-lock-6"
+          "evenok-extra-hi-lock-7"
+          "evenok-extra-hi-lock-8"))
       '(hl-todo-keyword-faces
          (list
            ;; apply `upcase' on lower-cased strings to avoid
@@ -127,6 +145,14 @@ Argument HEADER is a Gnus message header."
       `(evenok-extra-flymake-warning-bitmap ((t :foreground ,bright-orange)))
       `(evenok-extra-flymake-note-bitmap    ((t :foreground ,bright-blue)))
       `(evenok-extra-gnus-summary-dummy     ((t :foreground ,faded)))
+      `(evenok-extra-hi-lock-1              ((t :background ,bright-yellow :foreground ,black :weight bold)))
+      `(evenok-extra-hi-lock-2              ((t :background ,bright-orange :foreground ,black :weight bold)))
+      `(evenok-extra-hi-lock-3              ((t :background ,bright-red :foreground ,black :weight bold)))
+      `(evenok-extra-hi-lock-4              ((t :background ,bright-magenta :foreground ,black :weight bold)))
+      `(evenok-extra-hi-lock-5              ((t :background ,bright-purple :foreground ,black :weight bold)))
+      `(evenok-extra-hi-lock-6              ((t :background ,bright-blue :foreground ,black :weight bold)))
+      `(evenok-extra-hi-lock-7              ((t :background ,bright-cyan :foreground ,black :weight bold)))
+      `(evenok-extra-hi-lock-8              ((t :background ,bright-green :foreground ,black :weight bold)))
       `(evenok-extra-hl-todo-fixme          ((t :foreground ,bright-red)))
       `(evenok-extra-hl-todo-info           ((t :foreground ,bright-green)))
       `(evenok-extra-hl-todo-pndg           ((t :foreground ,bright-orange)))
