@@ -40,9 +40,10 @@
 (evenok-theme 'evenok-dark evenok-palette-dark)
 
 (evenok-with-palette evenok-palette-dark
-  (custom-theme-set-variables 'evenok-dark
-    `(frame-background-mode 'dark)
-    `(pdf-view-midnight-colors (cons ,white ,black))))
+  (custom-theme-set-variables
+   'evenok-dark
+   '(frame-background-mode 'dark)
+   '(pdf-view-midnight-colors (cons "white" "black"))))
 
 (provide-theme 'evenok-dark)
 

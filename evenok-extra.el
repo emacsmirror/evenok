@@ -48,7 +48,8 @@
   "String to which `evenok-extra-gnus-summary-dummy' face will be applied.
 
 The result will be put in place of `%uE' within
-`gnus-summary-dummy-line-format'."   :type 'string)
+`gnus-summary-dummy-line-format'."
+  :type 'string)
 
 (defface evenok-extra-gnus-summary-dummy nil nil)
 
@@ -60,11 +61,9 @@ The result will be put in place of `%uE' within
   "Dummy faced `evenok-extra-gnus-summary-dummy-line-format' and subject.
 
 Argument HEADER is a Gnus message header."
-  (propertize
-    (concat
-      evenok-extra-gnus-summary-dummy-line-format
-      (mail-header-subject header))
-    'face 'evenok-extra-gnus-summary-dummy))
+  (propertize (concat evenok-extra-gnus-summary-dummy-line-format
+                      (mail-header-subject header))
+              'face 'evenok-extra-gnus-summary-dummy))
 
 (defface evenok-extra-hi-lock-1 nil nil)
 (defface evenok-extra-hi-lock-2 nil nil)
@@ -94,14 +93,11 @@ Argument HEADER is a Gnus message header."
     (custom-theme-set-variables name
       `(erc-log-match-format
          (concat
-           (propertize "%t"
-             'face (list :foreground ,faded))
+           (propertize "%t" 'face (list :foreground ,faded))
            " "
-           (propertize "%c"
-             'face (list :foreground ,bright-blue))
+           (propertize "%c" 'face (list :foreground ,bright-blue))
            " "
-           (propertize "%n"
-             'face (list :foreground ,bright-yellow))
+           (propertize "%n" 'face (list :foreground ,bright-yellow))
            ": "
            (propertize "%m"
              'wrap-prefix (list 'space :width 4)

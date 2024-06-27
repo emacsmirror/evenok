@@ -41,12 +41,14 @@
 
 (evenok-with-palette evenok-palette-light
 
-  (custom-theme-set-faces 'evenok-light
-    '(default ((t :weight demibold))))
+  (custom-theme-set-faces
+   'evenok-light
+   '(default ((t :weight demibold))))
 
-  (custom-theme-set-variables 'evenok-light
-    '(frame-background-mode 'light)
-    `(pdf-view-midnight-colors (cons ,black ,white))))
+  (custom-theme-set-variables
+   'evenok-light
+   '(frame-background-mode 'light)
+   '(pdf-view-midnight-colors (cons "white" "black"))))
 
 (provide-theme 'evenok-light)
 
