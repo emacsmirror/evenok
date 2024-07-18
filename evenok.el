@@ -313,7 +313,7 @@
            `(eat-term-color-8                                     ((t :foreground ,black :weight bold)))
            `(eat-term-color-9                                     ((t :foreground ,bright-red :weight bold)))
            `(eat-term-italic                                      ((t :slant italic)))
-           `(eglot-highlight-symbol-face                          ((t :background ,dim)))
+           `(eglot-highlight-symbol-face                          ((t :weight bold)))
            `(eglot-inlay-hint-face                                ((t :foreground ,grey :weight light)))
            `(eglot-type-hint-face                                 ((t :foreground ,grey :weight light)))
            `(eldoc-highlight-function-argument                    ((t :inverse-video nil :weight bold)))
