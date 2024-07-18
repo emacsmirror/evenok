@@ -647,6 +647,7 @@
            `(org-level-7                                          ((t :foreground ,white)))
            `(org-level-8                                          ((t :foreground ,white)))
            `(org-link                                             ((t :underline t)))
+           `(org-list-dt                                          ((t :foreground ,white)))
            `(org-property-value                                   ((t :foreground ,grey)))
            `(org-quote                                            ((t :foreground ,faded)))
            `(org-special-keyword                                  ((t :foreground ,grey)))
