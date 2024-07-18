@@ -1,3 +1,6 @@
 ;; -*- no-byte-compile: t -*-
 
-((nil . ((sort-fold-case . t) (sentence-end-double-space . t))))
+((nil
+  (sentence-end-double-space . t)
+  (sort-fold-case . t)
+  (truncate-lines . t)))
