@@ -391,6 +391,8 @@
            `(flymake-warning                                      ((t :underline (:color ,bright-orange :style wave :position nil))))
            `(flymake-warning-echo                                 ((t :foreground ,bright-orange)))
            `(flymake-warning-echo-at-eol                          ((t :foreground ,grey-orange :weight light)))
+           `(flyspell-duplicate                                   ((t :underline (:color ,faded-orange :style wave :position nil))))
+           `(flyspell-incorrect                                   ((t :underline (:color ,faded-red :style wave :position nil))))
            `(font-latex-math-face                                 ((t :background ,black)))
            `(font-lock-builtin-face                               ((t :foreground ,bright-cyan)))
            `(font-lock-comment-delimiter-face                     ((t :foreground ,faded :weight normal)))
