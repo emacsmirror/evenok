@@ -534,6 +534,7 @@
            `(magit-diff-hunk-heading                              ((t :background ,dark)))
            `(magit-diff-hunk-heading-highlight                    ((t :background ,grey)))
            `(magit-diff-hunk-heading-selection                    ((t :background ,grey)))
+           `(magit-diff-hunk-region                               ((t :inverse-video t)))
            `(magit-diff-lines-heading                             ((t :background ,dark)))
            `(magit-diff-removed                                   ((t :background ,grey-red)))
            `(magit-diff-removed-highlight                         ((t :background ,grey-red)))
