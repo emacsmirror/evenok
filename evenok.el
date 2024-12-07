@@ -727,6 +727,7 @@
            `(proced-user                                          ((t :foreground ,bright-magenta)))
            `(pulse-highlight-start-face                           ((t :background ,dim)))
            `(query-replace                                        ((t :inverse-video t :weight bold)))
+           `(read-multiple-choice-face                            ((t :foreground ,bright-yellow)))
            `(region                                               ((t :background ,grey)))
            `(reb-match-0                                          ((t :background ,bright-yellow :foreground ,black)))
            `(reb-match-1                                          ((t :background ,bright-orange :foreground ,black)))
