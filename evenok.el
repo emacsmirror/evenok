@@ -293,6 +293,8 @@
            `(diff-refine-changed                                  ((t :background ,faded-purple)))
            `(diff-refine-removed                                  ((t :background ,faded-red)))
            `(diff-removed                                         ((t :background ,grey-red)))
+           `(dired-async-message                                  ((t :foreground ,bright-orange)))
+           `(dired-async-failures                                 ((t :foreground ,bright-red)))
            `(dired-broken-symlink                                 ((t :foreground ,bright-red)))
            `(dired-directory                                      ((t :foreground ,bright-blue)))
            `(dired-flagged                                        ((t :foreground ,bright-orange)))
