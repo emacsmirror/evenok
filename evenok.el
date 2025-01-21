@@ -762,6 +762,7 @@
            `(smerge-refined-added                                 ((t :background ,grey-green :extend t)))
            `(smerge-refined-changed                               ((t :background ,grey-purple :extend t)))
            `(smerge-refined-removed                               ((t :background ,grey-red :extend t)))
+           `(success                                              ((t :foreground ,bright-green)))
            `(tab-bar                                              ((t :background ,dim)))
            `(tab-bar-tab-group-inactive                           ((t :foreground ,faded)))
            `(tab-bar-tab-inactive                                 ((t :foreground ,faded)))
