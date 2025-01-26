@@ -641,6 +641,7 @@
            `(message-mml                                          ((t :foreground ,faded-magenta :slant italic)))
            `(message-separator                                    ((t :foreground ,faded)))
            `(minibuffer-prompt                                    ((t :foreground ,bright-blue)))
+           `(moai-medusa-hard-newline                             ((t :background ,dark :extend t)))
            `(mode-line                                            ((t :background ,dim)))
            `(mode-line-active                                     ((t :background ,dim)))
            `(mode-line-buffer-id                                  ((t :weight ,bold)))
