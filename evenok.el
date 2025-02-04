@@ -336,6 +336,8 @@
            `(eat-term-color-8                                     ((t :foreground ,black :weight ,bold)))
            `(eat-term-color-9                                     ((t :foreground ,bright-red :weight ,bold)))
            `(eat-term-italic                                      ((t :slant italic)))
+           `(edebug-enabled-breakpoint                            ((t :background ,bright-red :foreground ,black)))
+           `(edebug-disabled-breakpoint                           ((t :background ,grey-red :foreground ,black)))
            `(ediff-current-diff-A                                 ((t :background ,grey-red)))
            `(ediff-current-diff-Ancestor                          ((t :background ,grey-purple)))
            `(ediff-current-diff-B                                 ((t :background ,grey-green)))
