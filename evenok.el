@@ -677,6 +677,8 @@
            `(mu4e-title-face                                      ((t :foreground ,white :weight ,bold)))
            `(mu4e-trashed-face                                    ((t :strike-through t)))
            `(mu4e-unread-face                                     ((t :foreground ,bright-yellow)))
+           `(nobreak-hyphen                                       ((t :background ,faded-red :foreground ,black)))
+           `(nobreak-space                                        ((t :background ,faded-red :foreground ,black)))
            `(orderless-match-face-0                               ((t :inverse-video t :weight ,bold)))
            `(orderless-match-face-1                               ((t :inverse-video t :weight ,bold)))
            `(orderless-match-face-2                               ((t :inverse-video t :weight ,bold)))
