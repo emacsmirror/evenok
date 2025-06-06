@@ -481,6 +481,7 @@
            `(gnus-server-denied                                   ((t :foreground ,bright-magenta)))
            `(gnus-server-offline                                  ((t :foreground ,bright-red)))
            `(gnus-server-opened                                   ((t :foreground ,bright-green)))
+           `(gnus-signature                                       ((t :slant italic)))
            `(gnus-summary-cancelled                               ((t :foreground ,bright-red)))
            `(gnus-summary-selected                                ((t :background ,dark)))
            `(gnus-summary-high-ancient                            ((t :foreground ,faded :weight ,bold)))
