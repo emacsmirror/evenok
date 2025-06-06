@@ -453,7 +453,7 @@
            `(eshell-syntax-highlighting-shell-command-face        ((t :foreground ,bright-blue)))
            `(eshell-syntax-highlighting-string-face               ((t :foreground ,bright-green)))
            `(file-name-shadow                                     ((t :foreground ,faded)))
-           `(fill-column-indicator                                ((t :foreground ,dim)))
+           `(fill-column-indicator                                ((t :background ,dim :height 1)))
            `(flycheck-verify-select-checker                       ((t :underline t)))
            `(flymake-end-of-line-diagnostics-face                 ((t :foreground ,grey-red :slant italic :weight ,light)))
            `(flymake-error                                        ((t :underline (:color ,bright-red :style wave :position nil))))
