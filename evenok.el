@@ -480,7 +480,7 @@
            `(gnus-server-offline                                  ((t :foreground ,bright-red)))
            `(gnus-server-opened                                   ((t :foreground ,bright-green)))
            `(gnus-summary-cancelled                               ((t :foreground ,bright-red)))
-           `(gnus-summary-selected                                ((t :foreground ,bright-green)))
+           `(gnus-summary-selected                                ((t :background ,dark)))
            `(gnus-summary-high-ancient                            ((t :foreground ,faded :weight ,bold)))
            `(gnus-summary-high-read                               ((t :weight ,bold)))
            `(gnus-summary-high-ticked                             ((t :weight ,bold)))
