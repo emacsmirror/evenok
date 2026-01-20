@@ -209,6 +209,8 @@
            `(avy-lead-face-0                                      ((t :background ,white :foreground ,black :weight ,bold)))
            `(avy-lead-face-1                                      ((t :background ,white :foreground ,black :weight ,bold)))
            `(avy-lead-face-2                                      ((t :background ,white :foreground ,black :weight ,bold)))
+           `(battery-load-low                                     ((t :foreground ,bright-orange)))
+           `(battery-load-critical                                ((t :foreground ,bright-red)))
            `(bold                                                 ((t :weight ,bold)))
            `(bold-italic                                          ((t :slant italic :weight ,bold)))
            `(breadcrumb-face                                      ((t :foreground ,faded :slant italic :weight ,light)))
