@@ -408,7 +408,7 @@
            `(ement-room-list-left                                 ((t :foreground ,bright-orange)))
            `(ement-room-list-low-priority                         ((t :foreground ,faded)))
            `(ement-room-list-unread                               ((t :foreground ,bright-yellow)))
-           `(ement-room-membership                                ((t :foreground ,bright-yellow)))
+           `(ement-room-membership                                ((t :foreground ,faded)))
            `(ement-room-mention                                   ((t :foreground ,bright-magenta)))
            `(ement-room-quote                                     ((t :slant italic :weight ,light)))
            `(ement-room-read-receipt-marker                       ((t :foreground ,bright-blue)))
