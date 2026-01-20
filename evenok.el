@@ -335,6 +335,7 @@
            `(dired-mark                                           ((t :foreground ,bright-orange)))
            `(dired-marked                                         ((t :foreground ,bright-orange)))
            `(dired-symlink                                        ((t :foreground ,bright-cyan)))
+           `(display-time-date-and-time                           ((t :foreground ,faded)))
            `(eat-shell-prompt-annotation-failure                  ((t :foreground ,bright-red)))
            `(eat-shell-prompt-annotation-running                  ((t :foreground ,bright-yellow)))
            `(eat-shell-prompt-annotation-success                  ((t :foreground ,bright-green)))
