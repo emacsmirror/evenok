@@ -455,6 +455,8 @@
            `(eshell-syntax-highlighting-option-face               ((t :foreground ,bright-magenta)))
            `(eshell-syntax-highlighting-shell-command-face        ((t :foreground ,bright-blue)))
            `(eshell-syntax-highlighting-string-face               ((t :foreground ,bright-green)))
+           `(eww-form-text                                        ((t :background ,dark)))
+           `(eww-form-textarea                                    ((t :background ,dark)))
            `(file-name-shadow                                     ((t :foreground ,faded)))
            `(fill-column-indicator                                ((t :background ,dim :height 1)))
            `(flycheck-verify-select-checker                       ((t :underline t)))
