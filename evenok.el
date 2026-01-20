@@ -1,6 +1,7 @@
 ;;; evenok.el --- Themes with perceptively evenly distributed colors  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 Free Software Foundation, Inc.
+;; Copyright (C) 2026 Mekeor Melire
 
 ;; Author:                  Mekeor Melire <mekeor@posteo.de>
 ;; Created:                 2024
